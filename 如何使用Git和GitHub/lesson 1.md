@@ -12,3 +12,7 @@ git log
 ```git
 git config --global color.ui auto
 ```
+* 比较两次版本之间的差异
+```git
+git diff 3e42136a76cf78c6c421cd720427bf6337c2d623 4035769377cce96a88d5c1167079e12f30492391
+```
