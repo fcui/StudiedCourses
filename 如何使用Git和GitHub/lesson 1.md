@@ -4,6 +4,10 @@
 ```git
 git clone https://github.com/udacity/asteroids.git
 ```
+* 查看日志
+```git
+git log
+```
 * 要获得彩色输出
 ```git
 git config --global color.ui auto
