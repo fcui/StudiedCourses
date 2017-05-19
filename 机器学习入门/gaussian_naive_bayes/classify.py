@@ -19,7 +19,9 @@ def NBAccuracy(features_train, labels_train, features_test, labels_test):
     # you might need to import an sklearn module
 
     # accuracy = 1 - np.abs(pred - labels_test).sum() / len(labels_test)
-    from sklearn.metrics import accuracy_score
-    accuracy = accuracy_score(pred, labels_test)
+    # from sklearn.metrics import accuracy_score
+    # accuracy = accuracy_score(pred, labels_test)
+
+    accuracy = clf.score(features_test, labels_test)
     print(accuracy)
     return accuracy
