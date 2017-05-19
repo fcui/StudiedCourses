@@ -7,8 +7,8 @@ clf = GaussianNB()
 clf.fit(X, Y)
 clf.predict(newX)
 ```
-- 完成2.19中的练习[有关地形数据的高斯NB部署](https://github.com/fcui/StudiedCourses/tree/master/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/gaussian_naive_bayes)，已按照python 3做了修改，但原程序`class_vis.py`中的最后一句还是有点问题，不影响使用。
-- 完成2.20中的练习[计算 NB 准确性]()，调用`accuracy_score`来计算分类的准确度：
+- 完成2.19中的练习[有关地形数据的高斯NB部署](https://github.com/fcui/StudiedCourses/blob/master/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/gaussian_naive_bayes/ClassifyNB.py)，已按照python 3做了修改，但原程序`class_vis.py`中的最后一句还是有点问题，不影响使用。
+- 完成2.20中的练习[计算 NB 准确性](https://github.com/fcui/StudiedCourses/blob/master/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/gaussian_naive_bayes/classify.py)，调用`accuracy_score`来计算分类的准确度：
 ```python
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(pred, labels_test)
