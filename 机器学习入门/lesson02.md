@@ -17,3 +17,5 @@ accuracy = clf.score(features_test, labels_test)
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(pred, labels_test)
 ```
+- 关于贝叶斯，可以查看两篇博文：[贝叶斯推断](http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_one.html)和[如何使用贝叶斯推断过滤垃圾邮件](http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_two.html)。
+- 
