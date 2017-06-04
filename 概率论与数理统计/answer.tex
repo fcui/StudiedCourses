@@ -1,15 +1,15 @@
 \documentclass[a4paper]{article}
-\usepackage{amsmath, amssymb, amsfonts,amsthm}
+\usepackage{amsmath, amssymb, amsthm}
 \usepackage[text={16.5cm,23cm}]{geometry}
 \usepackage{color}
-\usepackage[UTF8, heading = true, fontset = windowsnew]{ctex}
+\usepackage[UTF8, heading = true, fontset = windows]{ctex}
 \usepackage[xetex,pdfstartview={FitH}]{hyperref}
 \usepackage[utopia]{mathdesign}
 \usepackage{enumerate}
 
 \ctexset{today=small}
 \ctexset{section={
-name={第,章},
+name={\heiti 第,章},
 number=\chinese{section},
 }
 }
@@ -21,7 +21,7 @@ number=\chinese{section},
 {3pt}% Space below
 {\kaishu}% Body font
 {}% Indent amount
-{\bfseries}% Theorem head font
+{\heiti}% Theorem head font
 {}% Punctuation after theorem head
 {.5em}% Space after theorem head
 {}% Theorem head spec (can be left empty, meaning `normal')
@@ -30,11 +30,11 @@ number=\chinese{section},
 
 % \renewcommand{
 \begin{document}
-	\title{\huge \bf 概率论与数理统计(第四版)}
+	\title{\huge \heiti 概率论与数理统计(第四版)}
 %	\author{\bf 崔峰}
 	\maketitle
 	\setcounter{section}{1}
-	\section{随机变量及其分布}
+	\section{\heiti 随机变量及其分布}
 	\begin{prob}
 		\begin{tabular}{c|ccc}
 		$X$ & 20 & 5 & 0\\
