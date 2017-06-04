@@ -15,7 +15,7 @@ number=\chinese{section},
 }
 
 \newcommand{\red}[1]{\textcolor{red}{#1}}
-
+\newcommand{\e}{\mathrm{e}}
 \newtheoremstyle{mystyle}% name
 {3pt}% Space above
 {3pt}% Space below
@@ -58,5 +58,22 @@ number=\chinese{section},
 			\item
 			$\displaystyle 1-P(X=0)=0.40951$
 		\end{enumerate}
+	\end{prob}
+	\setcounter{prob}{10}
+	\begin{prob}
+		以$X$记``此地区每年撰写此类文章的篇数'', 则$X\sim \pi(6)$, 故明年没有此类文章的概率为
+		\[
+			P(X=0)=\frac{\lambda^0\e^{-\lambda}}{0!}\Bigg|_{\lambda=6}=0.00248.
+		\]
+	\end{prob}
+	\setcounter{prob}{15}
+	\begin{prob}
+		出事故的车辆数$X$服从二项分布, 但$n$很大且$p$很小时, 可近似认为其服从泊松分布, 故令$\lambda =np=1000\times 0.0001=0.1$, 则有$X\sim\pi(0.1)$, 从而
+		\[
+			P(X\geqslant 2)=1-P(X=0)-P(X=1)=1-\e^{-0.1}-0.1\cdot\e^{-0.1}=0.00468.
+		\]
+	\end{prob}
+	\setcounter{prob}{20}
+	\begin{prob}
 	\end{prob}
 \end{document}
