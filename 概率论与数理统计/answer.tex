@@ -1,0 +1,62 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts,amsthm}
+\usepackage[text={16.5cm,23cm}]{geometry}
+\usepackage{color}
+\usepackage[UTF8, heading = true, fontset = windowsnew]{ctex}
+\usepackage[xetex,pdfstartview={FitH}]{hyperref}
+\usepackage[utopia]{mathdesign}
+\usepackage{enumerate}
+
+\ctexset{today=small}
+\ctexset{section={
+name={第,章},
+number=\chinese{section},
+}
+}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\newtheoremstyle{mystyle}% name
+{3pt}% Space above
+{3pt}% Space below
+{\kaishu}% Body font
+{}% Indent amount
+{\bfseries}% Theorem head font
+{}% Punctuation after theorem head
+{.5em}% Space after theorem head
+{}% Theorem head spec (can be left empty, meaning `normal')
+\theoremstyle{mystyle}
+\newtheorem{prob}{问题}[section]
+
+% \renewcommand{
+\begin{document}
+	\title{\huge \bf 概率论与数理统计(第四版)}
+	\author{\bf 崔峰}
+	\maketitle
+	\setcounter{section}{1}
+	\section{随机变量及其分布}
+	\begin{prob}
+		\begin{tabular}{c|ccc}
+		$X$ & 20 & 5 & 0\\
+		\hline
+		$p_k$ & 0.0002 & 0.0010 & 0.9989
+		\end{tabular}
+	\end{prob}
+	\setcounter{prob}{5}
+	\begin{prob}
+		以$X$记``同一时刻被使用的设备台数'', 则
+		\[
+			P(X=k)={5\choose k}(0.1)^k(0.9)^{5-k}
+		\]
+		\begin{enumerate}[{(}1{)}]
+			\item
+			$\displaystyle P(X=2)={5\choose 2}(0.1)^2(0.9)^{3}=0.0729$
+			\item
+			$\displaystyle 1-\sum_{k=0}^2P(X=k)=0.00856$
+			\item
+			$\displaystyle 1-\sum_{k=4}^5 P(X=k)=0.99954$
+			\item
+			$\displaystyle 1-P(X=0)=0.40951$
+		\end{enumerate}
+	\end{prob}
+\end{document}

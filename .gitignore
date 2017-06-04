@@ -2,3 +2,8 @@
 描述统计学入门/.ipynb_checkpoints/lesson01-checkpoint.ipynb
 统计思维与艺术/.ipynb_checkpoints/chapter01-checkpoint.ipynb
 统计思维与艺术/.ipynb_checkpoints/chapter02-checkpoint.ipynb
+概率论与数理统计/.ipynb_checkpoints/chap1-checkpoint.ipynb
+*.aux
+*.out
+*.gz
+概率论与数理统计/.ipynb_checkpoints/chap2-checkpoint.ipynb
