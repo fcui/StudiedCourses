@@ -16,6 +16,8 @@ number=\chinese{section},
 
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\e}{\mathrm{e}}
+\newcommand{\disp}{\displaystyle}
+
 \newtheoremstyle{mystyle}% name
 {3pt}% Space above
 {3pt}% Space below
@@ -75,5 +77,28 @@ number=\chinese{section},
 	\end{prob}
 	\setcounter{prob}{20}
 	\begin{prob}
+		\begin{enumerate}[{(}1{)}]
+			\item
+			分布函数
+			\[
+				F(x)=
+				\begin{cases}
+				0,&x<1;\\
+				\disp 2x-4+\frac{2}{x}, & 1\leqslant x< 2;\\
+				1, &x\geqslant2.
+				\end{cases}
+			\]
+			\item
+			分布函数
+			\[
+				F(x)=
+				\begin{cases}
+				0, & x<0;\\
+				\disp\frac{x^2}{2}, & 0\leqslant x <1;\\
+				\disp -\frac{x^2}{2}+2x-1, &1\leqslant x<2;\\
+				1,& x\geqslant 2.
+				\end{cases}
+			\]
+		\end{enumerate}
 	\end{prob}
 \end{document}
