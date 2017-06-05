@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.6.5)  5 JUN 2017 15:34
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.6.4)  6 JUN 2017 07:09
 entering extended mode
 **./answer.tex
 (answer.tex
@@ -1920,24 +1920,24 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 [1
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
 LaTeX Font Info:    Font shape `T1/mdput/m/sl' will be
-(Font)              scaled to size 9.90703pt on input line 104.
+(Font)              scaled to size 9.90703pt on input line 115.
 
 
 LaTeX Font Warning: Font shape `TU/SimHei(0)/m/sl' undefined
-(Font)              using `TU/SimHei(0)/m/n' instead on input line 104.
+(Font)              using `TU/SimHei(0)/m/n' instead on input line 115.
 
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
  (answer.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 104.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 104.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 115.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 115.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 104.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
  ) 
 Here is how much of TeX's memory you used:
  28611 strings out of 427834
@@ -1946,6 +1946,6 @@ Here is how much of TeX's memory you used:
  32301 multiletter control sequences out of 15000+200000
  615031 words of font info for 101 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 57i,7n,68p,10462b,552s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 57i,9n,68p,10462b,552s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on answer.pdf (2 pages).
