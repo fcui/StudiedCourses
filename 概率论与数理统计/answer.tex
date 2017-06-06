@@ -108,8 +108,21 @@ number=\chinese{section},
 			\item
 			\begin{gather*}
 				P(2<X\leqslant 5)=P(X\leqslant 5)-P(X\leqslant 2)=\varPhi(1)-\varPhi\left(-\frac{1}{2}\right)=\varPhi(1)+\varPhi\left(\frac{1}{2}\right)-1=0.53281,\\
-				P(-4<X\leqslant 10)=\varPhi\left(\frac{7}{2}\right)-\varPhi\left(-\frac{7}{2}\right)=2\varPhi\left(\frac{7}{2}\right)-1=0.99953,
+				P(-4<X\leqslant 10)=\varPhi\left(\frac{7}{2}\right)-\varPhi\left(-\frac{7}{2}\right)=2\varPhi\left(\frac{7}{2}\right)-1=0.99953,\\
+				P(|X|>2)=P(X<-2)+1-P(X\leqslant 2)=1+\varPhi\left(-\frac{5}{2}\right)-\varPhi\left(-\frac{1}{2}\right)=1+\varPhi\left(\frac{1}{2}\right)-\varPhi\left(\frac{5}{2}\right)=0.69767\\
+				P(X>3)=1-P(X\leqslant 3)=1-\varPhi(0)=0.5
 			\end{gather*}
+			\item
+			即求$1-P(X\leqslant c)=P(X\leqslant c)$, 即
+			\[
+				P(X\leqslant c)=\varPhi\left(\frac{c-3}{2}\right)=\frac{1}{2},
+			\]
+			所以有$c=3$.
+			\item
+			由$P(X>d)\geqslant 0.9$, 可知$1-P(X\leqslant d)\geqslant 0.9$, 即$P(X\leqslant d)\leqslant 0.1$, 而$\varPhi(-1.28155)=0.1$, 所以
+			\[
+				d = 2\times(-1.28155) +3=0.43690.
+			\]
 		\end{enumerate}
 	\end{prob}
 \end{document}
