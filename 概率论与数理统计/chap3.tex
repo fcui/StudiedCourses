@@ -25,6 +25,38 @@
 \end{prob}
 \subsection{边缘分布}
 \setcounter{prob}{5}
+\red{
 \begin{prob}
-
+	参见课本第2页中样本空间$S_2$的8个样本点, $X$和$Y$取值情况如下:
+	\begin{center}
+		\begin{tabular}{c|cccccccc}
+			\hline
+			样本点& $HHH$&$HHT$&$HTH$&$THH$&$HTT$&$THT$&$TTH$&$TTT$\\
+			\hline
+			$X$&2&2&1&1&1&1&0&0\\
+			\hline
+			$Y$&3&2&2&2&1&1&1&0\\
+			\hline
+		\end{tabular}
+	\end{center}
+		基于此可得$X$和$Y$的联合分布律和边缘分布律为:
+		\begin{center}
+			\renewcommand{\arraystretch}{1.7}
+			\begin{tabular}{c|ccc|c}
+				\hline
+				\backslashbox{$Y$}{$X$}&0&1&2&$P\{Y=j\}$\\
+				\hline
+				0&$\disp\frac{1}{8}$&0&0&$\disp\frac{1}{8}$\\
+				1&$\disp\frac{1}{8}$&$\disp\frac{1}{4}$&0&$\disp\frac{3}{8}$\\
+				2&0&$\disp\frac{1}{4}$&$\disp\frac{1}{8}$&$\disp\frac{3}{8}$\\
+				3&0&0&$\disp\frac{1}{8}$&$\disp\frac{1}{8}$\\
+				\hline
+				$P\{X=i\}$&$\disp\frac{1}{4}$&$\disp\frac{1}{2}$&$\disp\frac{1}{4}$&1\\
+				\hline				
+			\end{tabular}
+		\end{center}	
+\end{prob}}
+\subsection{条件分布}
+\setcounter{prob}{10}
+\begin{prob}
 \end{prob}
