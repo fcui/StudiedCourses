@@ -25,8 +25,7 @@
 \end{prob}
 \subsection{边缘分布}
 \setcounter{prob}{5}
-\red{
-\begin{prob}
+\begin{prob}\red{
 	参见课本第2页中样本空间$S_2$的8个样本点, $X$和$Y$取值情况如下:
 	\begin{center}
 		\begin{tabular}{c|cccccccc}
@@ -54,9 +53,69 @@
 				$P\{X=i\}$&$\disp\frac{1}{4}$&$\disp\frac{1}{2}$&$\disp\frac{1}{4}$&1\\
 				\hline				
 			\end{tabular}
-		\end{center}	
-\end{prob}}
+		\end{center}}
+\end{prob}
 \subsection{条件分布}
 \setcounter{prob}{10}
 \begin{prob}
+	\begin{enumerate}
+		\item
+		边缘分布律:
+		\begin{align*}
+			p_{n\cdot}=P\{X=n\}&=\frac{\e^{-14}}{n!}\sum_{m=0}^n n!\frac{7.14^m 6.86^{n-m}}{m!(n-m)!}
+			=\frac{\e^{-14}}{n!}\sum_{m=0}^n{n\choose m}7.14^m 6.86^{n-m}\\
+			&=\frac{\e^{-14}}{n!}(7.14+6.86)^n = \frac{14^n\e^{-14}}{n!}, \qquad n=0,1,2,\ldots.
+		\end{align*}
+		\red{说明$X$服从参数为$14$的泊松分布, 即$X\sim\pi(14)$}.
+		\begin{align*}
+			p_{\cdot m}=P\{Y=m\}&=\frac{7.14^m \e^{-14}}{m!}\sum_{n=m}^{+\infty} \frac{6.86^{n-m}}{(n-m)!}
+			=\frac{7.14^m \e^{-14}}{m!}\sum_{n=0}^{+\infty}\frac{6.86^n}{n!}\\
+			&=\frac{7.14^m \e^{-14}\e^{6.86}}{m!}=\frac{7.14^m \e^{-7.14}}{m!}, \qquad m=0,1,2,\ldots
+		\end{align*}
+		\red{说明$Y$服从参数为$7.14$的泊松分布, 即$X\sim\pi(7.14)$}.
+		\item
+		条件分布律:
+		\begin{gather*}
+			P\{Y=m\mid X=n\}={n\choose m}\frac{7.14^m 6.86^{n-m}}{14^n}={n\choose m}0.51^m 0.49^{n-m},\quad m=0,1,2,\ldots,n.\\
+			P\{X=n\mid Y=m\}=\frac{6.86^{n-m}\e^{-6.86}}{(n-m)!},\quad (\red{n=m,m+1,\ldots})
+		\end{gather*}
+		\item
+		$X=20$时, $Y$的条件分布律为$\disp {20\choose m}0.51^m 0.49^{20-m}$, $m=0,1,\ldots,20$.
+	\end{enumerate}
+\end{prob}
+\subsection{相互独立的随机变量}
+\setcounter{prob}{16}
+\begin{prob}
+	\begin{enumerate}
+	\item 	
+	\red{求出边缘分布律
+	\begin{gather*}
+		F_X(x)=F(x,+\infty)=
+		\begin{cases}
+			1-\e^{-\alpha x}, & x\geqslant 0,\\
+			0, & \textrm{其他}.
+		\end{cases}\\
+		F_Y(y)=F(+\infty, y)=
+		\begin{cases}
+		y,& 0\leqslant y\leqslant 1,\\
+		1, & y>1,\\
+		0, &\textrm{其他}.
+		\end{cases}
+	\end{gather*}
+	由此即可知 $F(x,y)=F_X(x)F_Y(y)$, 从而$X, ~Y$相互独立.}
+	\item
+	考虑到对于$0<p<1$, 有
+	\begin{gather*}
+		P\{X=x\}=p^2(1-p)^{x-1}\red{\sum_{y=1}^\infty (1-p)^{y-1}}=p(1-p)^{x-1},\quad x=1,2,\ldots,\\
+		P\{Y=y\}=p^2(1-p)^{y-1}\red{\sum_{x=1}^\infty (1-p)^{x-1}}=p(1-p)^{y-1},\quad y=1,2,\ldots.
+	\end{gather*}
+	从而$P\{X=x,Y=y\}=P\{X=x\}P\{Y=y\}$, 故$X,~Y$相互独立.
+	\end{enumerate}
+\end{prob}
+\subsection{两个随机变量的函数的分布}
+\setcounter{prob}{20}
+\begin{prob}
+	\begin{enumerate}
+	\item 
+	\end{enumerate}
 \end{prob}
