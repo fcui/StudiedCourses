@@ -92,13 +92,13 @@
 	\begin{gather*}
 		F_X(x)=F(x,+\infty)=
 		\begin{cases}
-			1-\e^{-\alpha x}, & x\geqslant 0,\\
+			1-\e^{-\alpha x}, & x\geqslant 0;\\
 			0, & \textrm{其他}.
 		\end{cases}\\
 		F_Y(y)=F(+\infty, y)=
 		\begin{cases}
-		y,& 0\leqslant y\leqslant 1,\\
-		1, & y>1,\\
+		y,& 0\leqslant y\leqslant 1;\\
+		1, & y>1;\\
 		0, &\textrm{其他}.
 		\end{cases}
 	\end{gather*}
@@ -117,5 +117,127 @@
 \begin{prob}
 	\begin{enumerate}
 	\item 
+	由公式知
+	\[
+		f_Z(z)=\int_{-\infty}^{+\infty} f(x,z-x)\dd x, \quad 0<x<1,\quad x<z<x+1.
+	\]
+	\red{于是通过示意图可知
+	\[
+		f_Z(z)=
+		\begin{cases}
+			\disp\int_0^z z\dd x=z^2,&0<z<1;\\
+			\disp\int_{z-1}^1 z\dd x=z(2-z), & 1\leqslant z<2;\\
+			0,& \textrm{其他}.
+		\end{cases}
+	\]}
+	\item
+	由公式知
+	\[
+		f_Z(z)=\int_{-\infty}^{+\infty}\frac{1}{|x|}f\left(x,\frac{z}{x}\right)\dd x,
+		\quad 0<x<1,\quad 0<z<x.
+	\]
+	画出示意图后可知
+	\[
+		f_Z(z)=
+		\begin{cases}
+			\disp \int_z^1 \frac{1}{x}\left(x+\frac{z}{x}\right)\dd x=2(1-z), & 0< z<1;\\
+			0, &\textrm{其他}.
+		\end{cases}
+	\]
+	\end{enumerate}
+\end{prob}
+\setcounter{prob}{25}
+\begin{prob}
+	由公式可知
+	\[
+		f_Z(z)=
+		\begin{cases}
+			\disp\int_{-\infty}^{+\infty}|x|f(x,xz)\dd x=\int_0^{+\infty}x\e^{-x}\e^{-xz}\dd x=\frac{1}{1+z^2},&z>0;\\
+			0, &\textrm{其他}.
+		\end{cases}
+	\]
+\end{prob}
+\setcounter{prob}{30}
+\begin{prob}
+	\begin{enumerate}
+	\item \red{
+	由瑞利分布的概率密度函数
+	\[
+		f_X(x)=
+		\begin{cases}
+			\disp\frac{x}{4}\e^{-x^2/8},& x\geqslant 0;\\
+			0, &\textrm{其他}.
+		\end{cases}
+	\]
+	可知其分布函数为
+	\[
+		F_X(x)=
+		\begin{cases}
+			\disp 1-\e^{-x^2/8},& x\geqslant 0;\\
+			0, &\textrm{其他}.
+		\end{cases}
+	\]}
+	\red{由于$X_i(i=1,2,3,4,5)$是独立同分布的随机变量}, 所以有
+	\[
+		F_{\max}(z)=
+		\begin{cases}
+			\disp \left(1-\e^{-z^2/8}\right)^5,& z\geqslant 0;\\
+			0, &\textrm{其他}.
+		\end{cases}
+	\]
+	\item
+	容易知道
+	\[
+		P\{Z>4\}=1-F_{\max}(z=4)=0.51668.
+	\]
+	\end{enumerate}
+\end{prob}
+\setcounter{prob}{35}
+\begin{prob}
+	\begin{enumerate}
+	\item
+	容易计算
+	\begin{gather*}
+		P\{X=2\mid Y=2\}=\frac{P\{X=2, Y=2\}}{P\{Y=2\}}=\frac{0.05}{0.25}=\frac{1}{5},\\
+		P\{Y=3\mid X=0\}=\frac{P\{Y=3, X=0\}}{P\{X=0\}}=\frac{0.01}{0.03}=\frac{1}{3}.
+	\end{gather*} 
+	\item
+	$V=\max\{X,Y\}$的分布律为
+	\begin{center}
+		\begin{tabular}{c|cccccc}
+			\hline
+			$V$&0&1&2&3&4&5\\
+			\hline
+			$p_k$&0&0.04&0.16& 0.28&0.24&0.28\\
+			\hline
+		\end{tabular}
+	\end{center}
+	以其中一个为例
+	\begin{multline*}
+		P\{V=3\}=P\{\max\{X,Y\}=3\}\\
+		=P\{X=3,Y<3\}+P\{X<3,Y=3\}+P\{X=3,Y=3\}=0.15+0.07+0.06=0.28.
+	\end{multline*}
+	\item
+	$U=\min\{X,Y\}$的分布律为
+		\begin{center}
+			\begin{tabular}{c|cccc}
+				\hline
+				$U$&0&1&2&3\\
+				\hline
+				$p_k$&0.28&0.30&0.25& 0.17\\
+				\hline
+			\end{tabular}
+		\end{center}
+	\item
+	$W=X+Y$的分布律为
+	\begin{center}
+		\begin{tabular}{c|ccccccccc}
+			\hline
+			$V$&0&1&2&3&4&5&6&7&8\\
+			\hline
+			$p_k$&0&0.02&0.06& 0.13&0.19&0.24&0.19&0.12&0.05\\
+			\hline
+		\end{tabular}
+	\end{center}
 	\end{enumerate}
 \end{prob}
