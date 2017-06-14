@@ -3,6 +3,9 @@
 convert dos linefeeds (crlf) to unix (lf)
 usage: dos2unix.py <input> <output>
 """
+
+# 出于python3的需要, 这里把words_data文件处理为word_data_unix
+
 original = "word_data.pkl"
 destination = "word_data_unix.pkl"
 

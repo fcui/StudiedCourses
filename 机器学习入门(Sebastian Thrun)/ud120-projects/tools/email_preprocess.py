@@ -8,6 +8,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_selection import SelectPercentile, f_classif
 
 
+# 出于python3的需要, 这里把words_data文件处理为word_data_unix
 def preprocess(words_file="../tools/word_data_unix.pkl",
                authors_file="../tools/email_authors.pkl"):
     """
