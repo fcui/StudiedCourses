@@ -1,5 +1,82 @@
 \section{随机变量的数字特征}
 \subsection{数学期望}
 \begin{prob}
+	\begin{enumerate}
+	\item 
+	以$X$表示取到的单词所包含的字母个数, 则其分布律为
+	\begin{center}
+		\begin{tabular}{c|cccc}
+			\hline
+			$X$&2&3&4&9\\
+			\hline
+			$p_k$&$\frac{1}{8}$&$\frac{5}{8}$&$\frac{1}{8}$&$\frac{1}{8}$\\
+			\hline
+		\end{tabular}
+	\end{center}
+	则期望$\disp E(X)=\frac{15}{4}=3.75$.
+	\item
+	以$Y$表示取到的字母所在单词所包含的字母数, 则其分布律为
+	\begin{center}
+		\begin{tabular}{c|cccc}
+			\hline
+			$Y$&2&3&4&9\\
+			\hline
+			$p_k$&$\frac{1}{15}$&$\frac{1}{2}$&$\frac{2}{15}$&$\frac{3}{10}$\\
+			\hline
+		\end{tabular}
+	\end{center}
+	则期望$\disp E(Y)=\frac{73}{15}=4.87$.
+	\item
+	得到分布律为
+	\begin{center}
+		\begin{tabular}{c|ccccccccccc}
+			\hline
+			$X$&1&2&3&4&5&7&8&9&10&11&12\\
+			\hline
+			$p_k$&$\frac{1}{6}$&$\frac{1}{6}$&$\frac{1}{6}$&$\frac{1}{6}$&$\frac{1}{6}$
+			&$\frac{1}{36}$&$\frac{1}{36}$&$\frac{1}{36}$&$\frac{1}{36}$&$\frac{1}{36}$&$\frac{1}{36}$\\
+			\hline
+		\end{tabular}
+	\end{center}
+	则期望$\disp E(Y)=\frac{49}{12}=4.08$.
+	\end{enumerate}
+\end{prob}
+\setcounter{prob}{5}
+\begin{prob}
+	\begin{enumerate}
+	\item 
+	容易计算得到
+	\begin{gather*}
+		E(X)=(-2)\times 0.4+0\times 0.3+2\times 0.3=-0.2,\\
+		E(X^2)=(-2)^2\times 0.4+0^2\times 0.3+2^2\times 0.3=2.8,\\
+		E(3X^2+5)=17\times 0.4+5\times 0.3+17\times 0.3=13.4,\\
+		\red{E(3X^2+5)=3E(X^2)+5=13.4}.
+	\end{gather*}
+	\item 
+	因为$X\sim\pi(\lambda)$, 即
+	\[
+		P\{X=k\}=\frac{\lambda^k\e^{-\lambda}}{k!},\quad k=0,1,2,\ldots.
+	\]
+	于是有
+	\[
+		E[1/(X+1)]=\sum_{k=0}^\infty \frac{1}{k+1}\cdot\frac{\lambda^k\e^{-\lambda}}{k!}
+		=\frac{\e^{-\lambda}}{\lambda}\sum_{k=0}^\infty \frac{\lambda^{k+1}}{(k+1)!}
+		=\frac{\e^{-\lambda}}{\lambda}\left(\e^\lambda-1\right)=\frac{1-\e^{-\lambda}}{\lambda}.
+	\]
+	\end{enumerate}
+\end{prob}
+\setcounter{prob}{10}
+\begin{prob}
+	因为使用寿命小于1年的概率为
+	\[
+		P\{X\leqslant 1\}=\int_0^1\frac{1}{4}\e^{-x/4}\dd x=1-\e^{-1/4}, 
+	\]
+	则$P\{X>1\}=\e^{-1/4}$. 于是赢利的数学期望为
+	\[
+		100\times\e^{-1/4}-\red{200}\times(1-\e^{-1/4})=33.6402.
+	\]
+\end{prob}
+\setcounter{prob}{15}
+\begin{prob}
 	内容...
 \end{prob}
