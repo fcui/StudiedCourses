@@ -96,7 +96,25 @@
 	\]
 	\red{
 	\item
-	如果不写出$X$分布律, 这时要假设随机变量
+	如果不写出$X$分布律, 这时可假设有随机变量
+		\begin{align*}
+			X_1&=1,\\
+			X_k&=
+			\begin{cases}
+				1, &\textrm{前}k-1\textrm{次均未找到合适的钥匙};\\
+				0, &\textrm{前}k-1\textrm{次中有一次试开成功}.
+			\end{cases} 
+			\qquad k=2,3,\ldots,n.
+		\end{align*}
+		那么$E(X_1)=1$, 同时对于$k=2,3,\ldots, n$可以求得
+		\begin{gather*}
+			P\{X_k=1\}=\frac{n-1}{n}\cdot\frac{n-2}{n-1}\cdots\frac{n-(k-1)}{n-k}=\frac{n-k+1}{n},\\
+			E(X_k)=1\cdot P\{X_k=1\}+0\cdot P\{X_k=0\}=\frac{n-k+1}{n}.
+		\end{gather*}
+		于是最后我们有
+		\[
+			E(X)=1+\sum_{k=2}^nE(X_k)=1+\sum_{k=2}^n \frac{n-k+1}{n}=\frac{n+1}{2}.
+		\]
 	}
 	\end{enumerate}
 \end{prob}
