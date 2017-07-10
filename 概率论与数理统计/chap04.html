@@ -926,20 +926,44 @@ $$\begin{array}{c|ccccccccccc}         \hline         X&amp;1&amp;2&amp;3&amp;4&
 <li></li>
 <li></li>
 <li></li>
+<li>(1) 容易计算得到<br>
+$$\begin{gather*}     E(X)=(-2)\times 0.4+0\times 0.3+2\times 0.3=-0.2,\\     E(X^2)=(-2)^2\times 0.4+0^2\times 0.3+2^2\times 0.3=2.8,\\     E(3X^2+5)=17\times 0.4+5\times 0.3+17\times 0.3=13.4,\\     \color{red}{{E(3X^2+5)=3E(X^2)+5=13.4}}. \end{gather*}$$<br>
+(2) 因为$X\sim\pi(\lambda)$, 即<br>
+$$P\{X=k\}=\frac{\lambda^k\text{e}^{-\lambda}}{k!},\quad k=0,1,2,\ldots.$$<br>
+于是有<br>
+$$E[1/(X+1)]=\sum_{k=0}^\infty \frac{1}{k+1}\cdot\frac{\lambda^k\text{e}^{-\lambda}}{k!}     =\frac{\text{e}^{-\lambda}}{\lambda}\sum_{k=0}^\infty \frac{\lambda^{k+1}}{(k+1)!}     =\frac{\text{e}^{-\lambda}}{\lambda}\left(\text{e}^\lambda-1\right)=\frac{1-\text{e}^{-\lambda}}{\lambda}.$$</li>
 <li></li>
 <li></li>
 <li></li>
 <li></li>
+<li>因为使用寿命小于1年的概率为<br>
+$$P\{X\leqslant 1\}=\int_0^1\frac{1}{4}\text{e}^{-x/4}\text{d} x=1-\text{e}^{-1/4},$$<br>
+则$P\{X&gt;1\}=\text{e}^{-1/4}$. 于是赢利的数学期望为<br>
+$$100\times\text{e}^{-1/4}-\color{red}{200}\times(1-\text{e}^{-1/4})=33.6402.$$</li>
 <li></li>
 <li></li>
 <li></li>
 <li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>(1) 写出分布律<br>
+$$\begin{array}{c|cccc}        \hline        X &amp; 1 &amp; 2 &amp; \cdots &amp;n\\        \hline        p_k &amp; \frac{1}{n} &amp; \frac{n-1}{n}\cdot\frac{1}{n-1} &amp; \cdots &amp;\frac{1}{n}\\        \hline    \end{array}$$<br>
+所以期望是<br>
+$$E(X)=\sum_{i=1}^{n}i\cdot \frac{1}{n}=\frac{n+1}{2}.$$<br>
+(2) (Mark)如果不写出$X$分布律, 这时可假设有随机变量<br>
+$$\begin{align*}        X_1&amp;=1,\\        X_k&amp;=        \begin{cases}            1, &amp;\textrm{前}k-1\textrm{次均未找到合适的钥匙};\\            0, &amp;\textrm{前}k-1\textrm{次中有一次试开成功}.        \end{cases}        \qquad k=2,3,\ldots,n.    \end{align*}$$<br>
+那么$E(X_1)=1$, 同时对于$k=2,3,\ldots, n$可以求得<br>
+$$\begin{gather*}        P\{X_k=1\}=\frac{n-1}{n}\cdot\frac{n-2}{n-1}\cdots\frac{n-(k-1)}{n-k}=\frac{n-k+1}{n},\\        E(X_k)=1\cdot P\{X_k=1\}+0\cdot P\{X_k=0\}=\frac{n-k+1}{n}.    \end{gather*}$$<br>
+于是最后我们有<br>
+$$E(X)=1+\sum_{k=2}^nE(X_k)=1+\sum_{k=2}^n \frac{n-k+1}{n}=\frac{n+1}{2}.$$</li>
 </ol>
 <h2 id="&#x65B9;&#x5DEE;">方差</h2>
 <ol start="21">
+<li>求得期望<br>
+$$E(X)=\sum_{k=1}^{\infty}k\cdot p(1-p)^{k-1}=p\sum_{k=1}^{\infty}k(1-p)^{k-1}=\frac{1}{p},$$<br>
+而方差<br>
+$$\begin{gather*}E(X^2)=\sum_{k=1}^{\infty}k^2\cdot p(1-p)^{k-1}=p\sum_{k=1}^{\infty}k^2\cdot (1-p)^{k-1}=p\cdot\frac{2-p}{p^3}=\frac{2-p}{p^2},\\D(X)=E(X^2)-[E(X)]^2=\frac{1-p}{p^2}.\end{gather*}$$</li>
+<li></li>
+<li></li>
+<li></li>
 <li></li>
 </ol>
 <h2 id="&#x534F;&#x65B9;&#x5DEE;&#x53CA;&#x76F8;&#x5173;&#x7CFB;&#x6570;">协方差及相关系数</h2>
