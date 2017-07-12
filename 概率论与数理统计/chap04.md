@@ -42,12 +42,12 @@
 6.
     (1) 容易计算得到
     $$
-	\begin{gather*}
+    \begin{gather*}
 		E(X)=(-2)\times 0.4+0\times 0.3+2\times 0.3=-0.2,\\
 		E(X^2)=(-2)^2\times 0.4+0^2\times 0.3+2^2\times 0.3=2.8,\\
 		E(3X^2+5)=17\times 0.4+5\times 0.3+17\times 0.3=13.4,\\
 		\color{red}{{E(3X^2+5)=3E(X^2)+5=13.4}}.
-	\end{gather*}
+    \end{gather*}
     $$
     (2) 因为$X\sim\pi(\lambda)$, 即
 	$$
@@ -92,7 +92,7 @@ $$
 	$$
     (2) (Mark)如果不写出$X$分布律, 这时可假设有随机变量
     $$
-		\begin{align*}
+		\begin{aligned}
 			X_1&=1,\\
 			X_k&=
 			\begin{cases}
@@ -100,19 +100,20 @@ $$
 				0, &\textrm{前}k-1\textrm{次中有一次试开成功}.
 			\end{cases}
 			\qquad k=2,3,\ldots,n.
-		\end{align*}
+		\end{aligned}
     $$
 		那么$E(X_1)=1$, 同时对于$k=2,3,\ldots, n$可以求得
         $$
-		\begin{gather*}
+			\begin{gather*}
 			P\{X_k=1\}=\frac{n-1}{n}\cdot\frac{n-2}{n-1}\cdots\frac{n-(k-1)}{n-k}=\frac{n-k+1}{n},\\
 			E(X_k)=1\cdot P\{X_k=1\}+0\cdot P\{X_k=0\}=\frac{n-k+1}{n}.
-		\end{gather*}
+			\end{gather*}
         $$
 		于是最后我们有
 		$$
 			E(X)=1+\sum_{k=2}^nE(X_k)=1+\sum_{k=2}^n \frac{n-k+1}{n}=\frac{n+1}{2}.
 		$$
+
 ## 方差
 21. 求得期望
 $$
@@ -131,4 +132,43 @@ $$
 24.
 25.
 ## 协方差及相关系数
+26. 
+	(1) 容易知道,
+$$
+	\begin{aligned}
+		P\{X_1=2,X_2=2,X_3=5\}&=P\{X_1=2\}\cdot P\{X_2=2\}\cdot P\{X_3=5\}\\
+		&= {4 \choose 2}\left(\frac{1}{2}\right)^2\left(\frac{1}{2}\right)^2
+		\cdot {6\choose 2}\left(\frac{1}{3}\right)^2\left(\frac{2}{3}\right)^4
+		\cdot {6\choose 5}\left(\frac{1}{3}\right)^5\left(\frac{2}{3}\right)\\
+		&= 0.002032,
+	\end{aligned}
+$$
+	$$\begin{gather*}
+		E(X_1X_2X_2X_3)=E(X_1)E(X_2)E(X_3)=2\cdot 2\cdot 2=8,\\
+		E(X_1-X_2)=2-2=0,\\
+		E(X_1-2X_2)=2-2\cdot 2=-2.
+	\end{gather*}$$
+	(2)
+		(i) $X$与$Y$相互独立, 则
+		$$\begin{gather*}
+			E(Z)=E(5X-Y+15)=5\cdot 3-1+15=29,\\
+			D(Z)=D(5X-Y+15)=\color{red}{D(5X)+D(-Y)}=5^2\cdot 4+9+0=109.
+		\end{gather*}$$
+		(ii) 若$X$与$Y$不相关, 则
+		$$\begin{gather*}
+			E(Z)=E(5X-Y+15)=5\cdot 3-1+15=29,\\
+			D(Z)=D(5X-Y+15)=D(5X-Y)=109.
+		\end{gather*}$$
+		(iii) 若$X$与$Y$相关系数为0.25, 则注意到$\color{red}{\text{Cov}(X,Y)=\sqrt{D(x)}\cdot\sqrt{D(Y)}\cdot\rho_{XY}}=2\cdot 3\cdot 0.25=1.5$, 从而有
+		$$\begin{aligned}
+			D(Z)&=D(5X-Y+15)=D(5X-Y)\\
+			&=D(5X)+D(-Y)+2E\{(5X-E(5X))(-Y-E(-Y))\}\\
+			&=D(5X)+D(-Y)+2\cdot (-5)\cdot E\{(X-E(X))(Y-E(Y))\}\\
+			&=5^2\cdot 4+9-10\cdot 1.5=94.
+		\end{aligned}$$
+27.
+28.
+29.
+30.
+31. 
 ## 矩、协方差矩阵
