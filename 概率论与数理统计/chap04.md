@@ -132,7 +132,7 @@ $$
 24.
 25.
 ## 协方差及相关系数
-26. 
+26.
 	(1) 容易知道,
 $$
 	\begin{aligned}
@@ -170,5 +170,16 @@ $$
 28.
 29.
 30.
-31. 
+31. 注意到$x$和$y$的非零区域, 则可以得到
+$$\begin{gather*}
+    E(X)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}x\cdot 1\text{d}x\text{d}y=\int_0^1x\text{d}x\int_{-x}^{x}\text{d}y=\frac23,\\
+	E(Y)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}y\cdot 1\text{d}x\text{d}y=\int_0^1\text{d}x\int_{-x}^{x}y\text{d}y=0,\\
+	E(XY)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}xy\text{d}x\text{d}y=\int_0^1x\text{d}x\int_{-x}^{x}y\text{d}y=0,\\
+	\text{Cov}(X,Y)=E(X)E(Y)-E(XY)=0.
+\end{gather*}$$
+32.
+33.
+34.
+35.
+36. 
 ## 矩、协方差矩阵
