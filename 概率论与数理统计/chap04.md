@@ -1,3 +1,11 @@
+---
+html:
+  embed_local_images: false
+  embed_svg: true
+  offline: false
+export_on_save:
+  html: true
+---
 # 随机变量的数字特征
 ## 数学期望
 1.
@@ -181,5 +189,14 @@ $$\begin{gather*}
 33.
 34.
 35.
-36. 
+36. 由切比雪夫不等式可知
+$$
+    P\{|X-7300|\geqslant \varepsilon\}\leqslant \frac{700^2}{\varepsilon^2},
+$$
+故有
+$$
+    P\{|X-7300|\leqslant 2100\}\geqslant 1- \frac{700^2}{2100^2}=0.8889.
+$$
+37.
+38.
 ## 矩、协方差矩阵
