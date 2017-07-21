@@ -17,143 +17,193 @@
       
 
       <style> 
-      /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+abap+actionscript+ada+apacheconf+apl+applescript+asciidoc+aspnet+autoit+autohotkey+bash+basic+batch+c+brainfuck+bro+bison+csharp+cpp+coffeescript+ruby+css-extras+d+dart+django+diff+docker+eiffel+elixir+erlang+fsharp+fortran+gherkin+git+glsl+go+graphql+groovy+haml+handlebars+haskell+haxe+http+icon+inform7+ini+j+jade+java+jolie+json+julia+keyman+kotlin+latex+less+livescript+lolcode+lua+makefile+markdown+matlab+mel+mizar+monkey+nasm+nginx+nim+nix+nsis+objectivec+ocaml+oz+parigp+parser+pascal+perl+php+php-extras+powershell+processing+prolog+properties+protobuf+puppet+pure+python+q+qore+r+jsx+reason+rest+rip+roboconf+crystal+rust+sas+sass+scss+scala+scheme+smalltalk+smarty+sql+stylus+swift+tcl+textile+twig+typescript+vbnet+verilog+vhdl+vim+wiki+xojo+yaml */
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
  */
-
 code[class*="language-"],
 pre[class*="language-"] {
-	color: black;
-	background: none;
-	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-@media print {
-	code[class*="language-"],
-	pre[class*="language-"] {
-		text-shadow: none;
-	}
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #f5f2f0;
+  padding: .8em;
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #fff;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
 }
 
 .token.comment,
-.token.prolog,
-.token.doctype,
+.token.blockquote {
+  color: #969896;
+}
+
 .token.cdata {
-	color: slategray;
+  color: #183691;
 }
 
-.token.punctuation {
-	color: #999;
-}
-
-.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #905;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #690;
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
 }
 
 .token.operator,
-.token.entity,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
 .token.url,
-.language-css .token.string,
-.style .token.string {
-	color: #a67f59;
-	background: hsla(0, 0%, 100%, .5);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-	color: #07a;
-}
-
-.token.function {
-	color: #DD4A68;
-}
-
 .token.regex,
-.token.important,
-.token.variable {
-	color: #e90;
+.token.attr-value {
+  color: #183691;
 }
 
-.token.important,
-.token.bold {
-	font-weight: bold;
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
 }
-.token.italic {
-	font-style: italic;
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
 }
 
 .token.entity {
-	cursor: help;
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
 }body{font-size:16px;background-color:#f3f2ee;font-family:"PT Serif",'Times New Roman',Times;color:#1f0909;line-height:1.5em}body ol,body ul{list-style:none}body blockquote,body q{quotes:none}body blockquote:before,body blockquote:after,body q:before,body q:after{content:'';content:none}body table{border-collapse:collapse;border-spacing:0}body h1,body h2,body h3,body h4,body h5,body h6{font-weight:bold}body h1{font-size:1.875em;line-height:1.6em;margin-top:2em}body h2,body h3{font-size:1.3125em;line-height:1.15;margin-top:2.285714em;margin-bottom:1.15em}body h3{font-weight:normal}body h4{font-size:1.125em;margin-top:2.67em}body h5,body h6{font-size:1em}body h1{border-bottom:1px solid;margin-bottom:1.875em;padding-bottom:.8125em}body a{text-decoration:none;color:#065588}body a:hover,body a:active{text-decoration:underline}body p,body blockquote,body .md-fences{margin-bottom:1.5em}body h1,body h2,body h3,body h4,body h5,body h6{margin-bottom:1.5em}body blockquote{font-style:italic;border-left:5px solid;margin-left:2em;padding-left:1em}body ul,body ol{margin:0 0 1.5em 1.5em}body ol li{list-style-type:decimal;list-style-position:outside}body ul li{list-style-type:disc;list-style-position:outside}body li>p{margin-top:0;margin-bottom:0}body .md-meta,body .md-before,body .md-after{color:#999}body table{margin-bottom:1.5em;font-size:1em}body thead th,body tfoot th{padding:.25em .25em .25em .4em;text-transform:uppercase}body th{text-align:left}body td{vertical-align:top;padding:.25em .25em .25em .4em}body code,body .md-fences{background-color:#dadada;padding-left:1ch;padding-right:1ch}body .md-fences{margin-left:2em;margin-bottom:3em}body .md-fences .CodeMirror.CodeMirror-wrap{top:-0.8em}body pre,body code,body tt{font-size:.875em;line-height:1.714285em}body h1{line-height:1.3em;font-weight:normal;margin-bottom:.5em}body p+ul,body p+ol{margin-top:-1em}body h3+ul,body h4+ul,body h5+ul,body h6+ul,body h3+ol,body h4+ol,body h5+ol,body h6+ol{margin-top:.5em}body li>ul,body li>ol{margin-top:inherit}body h2,body h3{margin-bottom:.75em}body hr{border-top:none;border-right:none;border-bottom:1px solid;border-left:none}body h1{border-color:#c5c5c5}body blockquote{border-color:#bababa;color:#656565}body thead.md-table-edit{background-color:transparent}body thead{background-color:#dadada}body tr:nth-child(even){background:#e8e7e7}body hr{border-color:#c5c5c5}body .task-list{padding-left:1rem}body .task-list-item{list-style-type:none;margin-left:-1.8em}body .task-list-item .task-list-item-checkbox{margin-right:.8em}body .task-list-item input:before{content:'\221A';display:inline-block;width:1.25rem;height:1.5rem;vertical-align:middle;text-align:center;color:#ddd;background-color:#F3F2EE}body .task-list-item input:checked:before,body .task-list-item input[checked]:before{color:inherit}body img{max-width:100%}@media screen and (min-width:914px){html body:not([data-presentation-mode]){width:980px;margin:10px auto}}@media screen and (max-width:400px){html body:not([data-presentation-mode]){font-size:14px;margin:0 auto;padding:15px}}html body .pagebreak,html body .newpage{page-break-before:always}html body pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}html body pre.line-numbers>code{position:relative}html body pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html body pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}html body pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}html body .mathjax-exps .MathJax_Display{text-align:center !important}html body:not([for="preview"]) .code-chunk .btn-group{display:none}html body:not([for="preview"]) .code-chunk .status{display:none} 
       html body {
   font-family: SimHei, sans-serif;
@@ -180,22 +230,55 @@ html body .reveal {
 
 <h2 class="mume-header" id="&#x5927;&#x6570;&#x5B9A;&#x7406;">大数定理</h2>
 
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
 <h2 class="mume-header" id="&#x4E2D;&#x5FC3;&#x6781;&#x9650;&#x5B9A;&#x7406;">中心极限定理</h2>
 
-<ol start="7">
+<ol>
+<li>以<span class="mathjax-exps">$X_i(i=1,2,&#x5C;ldots,16)$</span>表示第<span class="mathjax-exps">$i$</span>个电器元件的寿命, 以<span class="mathjax-exps">$X$</span>记为16个电器元件的寿命总和. 由题设可知<span class="mathjax-exps">$E(X_i)=100$</span>, <span class="mathjax-exps">$D(X_i)=10000$</span>, 从而由中心极限定理可知<br>
+<div class="mathjax-exps">$$&#x5C;begin{aligned} P&#x5C;{X&gt;1920&#x5C;}&amp;=P&#x5C;left&#x5C;{&#x5C;frac{X-16&#x5C;cdot 100}{4&#x5C;cdot 100 }&gt;&#x5C;frac{1920-16&#x5C;cdot 100}{4&#x5C;cdot 100 }&#x5C;right&#x5C;}&#x5C;&#x5C; &amp;=1-P&#x5C;left&#x5C;{&#x5C;frac{X-16&#x5C;cdot 100}{4&#x5C;cdot 100 }&#x5C;leqslant0.8&#x5C;right&#x5C;}&#x5C;&#x5C; &amp;=1-&#x5C;varPhi(0.8)=0.2119.&#x5C;end{aligned}$$</div><div class="code-chunk" data-id="code-chunk-id-0" data-cmd="python" data-code=""><pre class="language-python "><span class="token punctuation">(</span><span class="token number">1920</span> <span class="token operator">-</span> <span class="token number">16</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">400</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1920</span> <span class="token operator">-</span> <span class="token number">16</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">400</span><span class="token punctuation">)</span>
+<span class="token keyword">from</span> scipy <span class="token keyword">import</span> stats
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> stats<span class="token punctuation">.</span>norm<span class="token punctuation">.</span>cdf<span class="token punctuation">(</span><span class="token number">0.8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"><pre class="language-text">0.8
+0.211855398583
+</pre></div></div>
+</li>
 <li></li>
 <li></li>
 <li></li>
 <li></li>
+<li>分别以<span class="mathjax-exps">$X_i$</span>, <span class="mathjax-exps">$Y_i(i=1,2,&#x5C;ldots,20)$</span>记为20台机器第一阶段和第二阶段的修理时间,<br>
+以<span class="mathjax-exps">$Z=&#x5C;sum_{i=1}^{20}(X_i+Y_i)$</span>记为修理时间总和. 由题意可知<span class="mathjax-exps">$E(X_i)=0.2$</span>, <span class="mathjax-exps">$D(X_i)=0.2^2$</span>, <span class="mathjax-exps">$E(Y_i)=0.3$</span>, <span class="mathjax-exps">$D(Y_i)=0.3^2$</span>, 从而有<br>
+<div class="mathjax-exps">$$&#x5C;begin{gather*} E(X_i+Y_i)=E(X_i)+E(Y_i)=0.5,&#x5C;&#x5C; D(X_i+Y_i)=D(X_i)+E(Y_i)=0.2^2+0.3^2,&#x5C;end{gather*}$$</div><br>
+<div class="mathjax-exps">$$&#x5C;begin{aligned} P&#x5C;{Z&lt;8&#x5C;}&amp;=P&#x5C;left&#x5C;{&#x5C;frac{Z-20&#x5C;cdot 0.5}{&#x5C;sqrt{20&#x5C;cdot(0.2^2+0.3^2)}}&lt;&#x5C;frac{8-20&#x5C;cdot 0.5}{&#x5C;sqrt{20&#x5C;cdot(0.2^2+0.3^2)}}&#x5C;right&#x5C;}&#x5C;&#x5C; &amp;=&#x5C;varPhi(-1.24)=0.1075.&#x5C;end{aligned}$$</div><div class="code-chunk" data-id="code-chunk-id-1" data-cmd="python" data-code=""><pre class="language-python "><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">8</span> <span class="token operator">-</span> <span class="token number">20</span> <span class="token operator">*</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">20</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0.2</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">0.3</span> <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+<span class="token keyword">from</span> scipy <span class="token keyword">import</span> stats
+<span class="token keyword">print</span><span class="token punctuation">(</span>stats<span class="token punctuation">.</span>norm<span class="token punctuation">.</span>cdf<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1.24</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"><pre class="language-text">-1.2403473458920844
+0.107487697075
+</pre></div></div>
+</li>
 <li></li>
+<li></li>
+<li></li>
+<li></li>
+<li>(1) 由中心极限定理可知<span class="mathjax-exps">$&#x5C;overline{X}$</span>近似服从<span class="mathjax-exps">$N(5, 0.3&#x2F;80)$</span>, 故<br>
+<div class="mathjax-exps">$$&#x5C;begin{aligned}    P&#x5C;{4.9&lt;&#x5C;overline{X}&lt;5.1&#x5C;}&amp;=P&#x5C;{&#x5C;overline{X}&lt;5.1&#x5C;}-P&#x5C;{&#x5C;overline{X}&lt;4.9&#x5C;}&#x5C;&#x5C;    &amp;=P&#x5C;left&#x5C;{&#x5C;color{red}{&#x5C;frac{&#x5C;overline{X}-5}{&#x5C;sqrt{0.3&#x2F;80}}}&lt;&#x5C;frac{5.1- 5}{&#x5C;sqrt{0.3&#x2F;80}}&#x5C;right&#x5C;}-P&#x5C;left&#x5C;{&#x5C;frac{&#x5C;overline{X}-5}{&#x5C;sqrt{0.3&#x2F;80}}&lt;&#x5C;frac{4.9- 5}{&#x5C;sqrt{0.3&#x2F;80}}&#x5C;right&#x5C;}&#x5C;&#x5C;    &amp;=&#x5C;varPhi(1.63)-&#x5C;varPhi(-1.63)=2&#x5C;varPhi(1.63)-1=0.8969.&#x5C;end{aligned}$$</div><div class="code-chunk" data-id="code-chunk-id-2" data-cmd="python" data-code=""><pre class="language-python "><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">5.1</span> <span class="token operator">-</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">0.3</span> <span class="token operator">/</span> <span class="token number">80</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">4.9</span> <span class="token operator">-</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">0.3</span> <span class="token operator">/</span> <span class="token number">80</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+<span class="token keyword">from</span> scipy <span class="token keyword">import</span> stats
+<span class="token keyword">print</span><span class="token punctuation">(</span>stats<span class="token punctuation">.</span>norm<span class="token punctuation">.</span>cdf<span class="token punctuation">(</span><span class="token number">1.63</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+</pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"><pre class="language-text">1.6329931618554463
+-1.6329931618554463
+0.89689850302
+</pre></div></div>
+(2) 由题意可知<br>
+<div class="mathjax-exps">$$&#x5C;begin{gather*}    E(&#x5C;overline{X})=E(&#x5C;overline{Y})=5,&#x5C;qquad D(&#x5C;overline{X})=D(&#x5C;overline{Y})=&#x5C;frac{0.3}{80},&#x5C;&#x5C;    E(&#x5C;overline{X}-&#x5C;overline{Y})=0,&#x5C;qquad    D(&#x5C;overline{X}-&#x5C;overline{Y})=&#x5C;frac{0.3}{40},&#x5C;end{gather*}$$</div><br>
+从而<span class="mathjax-exps">$&#x5C;overline{X}-&#x5C;overline{Y}$</span>近似服从<span class="mathjax-exps">$N(0,0.3&#x2F;40)$</span>, 于是就有<br>
+<div class="mathjax-exps">$$&#x5C;begin{aligned}    P&#x5C;{-0.1&lt;&#x5C;overline{X}-&#x5C;overline{Y}&lt;0.1&#x5C;}&amp;=P&#x5C;left&#x5C;{&#x5C;frac{-0.1-0}{&#x5C;sqrt{0.3&#x2F;40}}&lt;&#x5C;frac{&#x5C;overline{X}-&#x5C;overline{Y}-0}{&#x5C;sqrt{0.3&#x2F;40}}&lt;&#x5C;frac{0.1-0}{&#x5C;sqrt{0.3&#x2F;40}}&#x5C;right&#x5C;}&#x5C;&#x5C;    &amp;=2&#x5C;varPhi(1.155)-1=0.7519.&#x5C;end{aligned}$$</div><div class="code-chunk" data-id="code-chunk-id-3" data-cmd="python" data-code=""><pre class="language-python "><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">0.3</span> <span class="token operator">/</span> <span class="token number">40</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+<span class="token keyword">from</span> scipy <span class="token keyword">import</span> stats
+<span class="token keyword">print</span><span class="token punctuation">(</span>stats<span class="token punctuation">.</span>norm<span class="token punctuation">.</span>cdf<span class="token punctuation">(</span><span class="token number">1.155</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+</pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"><pre class="language-text">1.1547005383792517
+0.751909573533
+</pre></div></div>
+</li>
 <li></li>
 <li></li>
 <li></li>
