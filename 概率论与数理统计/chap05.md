@@ -31,6 +31,7 @@ $$\begin{gather*}
     E(X_i+Y_i)=E(X_i)+E(Y_i)=0.5,\\
     D(X_i+Y_i)=D(X_i)+E(Y_i)=0.2^2+0.3^2,
 \end{gather*}$$
+以及
 $$\begin{aligned}
     P\{Z<8\}&=P\left\{\frac{Z-20\cdot 0.5}{\sqrt{20\cdot(0.2^2+0.3^2)}}<\frac{8-20\cdot 0.5}{\sqrt{20\cdot(0.2^2+0.3^2)}}\right\}\\
     &=\varPhi(-1.24)=0.1075.
