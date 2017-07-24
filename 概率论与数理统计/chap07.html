@@ -246,11 +246,59 @@ x <span class="token operator">=</span> np<span class="token punctuation">.</spa
 6.85714285713e-06
 </pre></div></div>
 </li>
+<li>(1) 由题意计算可得<br>
+<div class="mathjax-exps">$$&#x5C;mu_1=&#x5C;int_{-&#x5C;infty}^{+&#x5C;infty}x&#x5C;theta c^&#x5C;theta x^{-(&#x5C;theta+1)}&#x5C;text{d}x     =&#x5C;theta c^&#x5C;theta &#x5C;int_{c}^{+&#x5C;infty}x^{-&#x5C;theta}&#x5C;text{d}x     =&#x5C;theta c^&#x5C;theta &#x5C;cdot&#x5C;frac{x^{-&#x5C;theta+1}}{-&#x5C;theta+1}&#x5C;Bigg|^{+&#x5C;infty}_c     =&#x5C;frac{c&#x5C;theta}{&#x5C;theta-1},$$</div><br>
+从而有<br>
+<div class="mathjax-exps">$$&#x5C;theta=&#x5C;frac{&#x5C;mu_1}{&#x5C;mu_1-c}.$$</div><br>
+在上式中以<span class="mathjax-exps">$&#x5C;overline{X}$</span>来代替<span class="mathjax-exps">$&#x5C;mu_1$</span>, 可得<span class="mathjax-exps">$&#x5C;theta$</span>的矩估计量与矩估计值<br>
+<div class="mathjax-exps">$$&#x5C;hat{&#x5C;theta}=&#x5C;frac{&#x5C;overline{X}}{&#x5C;overline{X}-c},&#x5C;qquad     &#x5C;hat{&#x5C;theta}=&#x5C;frac{&#x5C;overline{x}}{&#x5C;overline{x}-c}.$$</div><br>
+(2) 由题意计算可知<br>
+<div class="mathjax-exps">$$&#x5C;mu_1=&#x5C;int_{-&#x5C;infty}^{+&#x5C;infty}x&#x5C;sqrt{&#x5C;theta}x^{&#x5C;sqrt{&#x5C;theta}-1}&#x5C;text{d}x     =&#x5C;sqrt{&#x5C;theta}&#x5C;int_0^1x^{&#x5C;sqrt{&#x5C;theta}}&#x5C;text{d}x     =&#x5C;frac{&#x5C;sqrt{&#x5C;theta}}{&#x5C;sqrt{&#x5C;theta}+1},$$</div><br>
+于是解得<br>
+<div class="mathjax-exps">$$&#x5C;theta=&#x5C;left(&#x5C;frac{&#x5C;mu_1}{&#x5C;mu_1-1}&#x5C;right)^2.$$</div><br>
+在上式中以<span class="mathjax-exps">$&#x5C;overline{X}$</span>来代替<span class="mathjax-exps">$&#x5C;mu_1$</span>, 可得<span class="mathjax-exps">$&#x5C;theta$</span>的矩估计量与矩估计值<br>
+<div class="mathjax-exps">$$&#x5C;hat{&#x5C;theta}=&#x5C;left(&#x5C;frac{&#x5C;overline{X}}{&#x5C;overline{X}-1}&#x5C;right)^2,&#x5C;qquad     &#x5C;hat{&#x5C;theta}=&#x5C;left(&#x5C;frac{&#x5C;overline{x}}{&#x5C;overline{x}-1}&#x5C;right)^2.$$</div><br>
+(3) 因为<span class="mathjax-exps">$&#x5C;mu_1=E(X)=mp$</span>, 可得<span class="mathjax-exps">$p=&#x5C;dfrac{&#x5C;mu_1}{m}$</span>, 以<span class="mathjax-exps">$&#x5C;overline{X}$</span>代替<span class="mathjax-exps">$&#x5C;mu_1$</span>可得<br>
+<div class="mathjax-exps">$$&#x5C;hat{p}=&#x5C;frac{&#x5C;overline{X}}{m},&#x5C;qquad &#x5C;hat{p}=&#x5C;frac{&#x5C;overline{x}}{m}.$$</div></li>
+<li>(1) 考虑<span class="mathjax-exps">$x_1,x_2,&#x5C;ldots,x_n$</span>为一样本值, 则似然函数为<br>
+<div class="mathjax-exps">$$L(&#x5C;theta)=&#x5C;prod_{i=1}^n&#x5C;theta c^&#x5C;theta x_i^{-(&#x5C;theta+1)}     =&#x5C;theta^nc^{n&#x5C;theta}&#x5C;left(&#x5C;prod_{i=1}^nx_i&#x5C;right)^{-(&#x5C;theta+1)},$$</div><br>
+于是有<br>
+<div class="mathjax-exps">$$&#x5C;ln L(&#x5C;theta)=n&#x5C;ln &#x5C;theta +n&#x5C;theta&#x5C;ln c-(&#x5C;theta+1)&#x5C;sum_{i=1}^n&#x5C;ln x_i.$$</div><br>
+令<br>
+<div class="mathjax-exps">$$&#x5C;frac{&#x5C;text{d}}{&#x5C;text{d}&#x5C;theta}&#x5C;ln L(&#x5C;theta)=&#x5C;frac{n}{&#x5C;theta}+n&#x5C;ln c     -&#x5C;sum_{i=1}^n&#x5C;ln x_i=0,$$</div><br>
+得<br>
+<div class="mathjax-exps">$$&#x5C;theta=&#x5C;frac{n}{&#x5C;sum&#x5C;limits_{i=1}^n&#x5C;ln x_i-n&#x5C;ln c}.$$</div><br>
+从而可知<span class="mathjax-exps">$&#x5C;theta$</span>的最大似然估计量为<br>
+<div class="mathjax-exps">$$&#x5C;hat{&#x5C;theta}=&#x5C;frac{n}{&#x5C;sum&#x5C;limits_{i=1}^n&#x5C;ln X_i-n&#x5C;ln c}.$$</div><br>
+(2) 考虑一个样本值<span class="mathjax-exps">$x_1,x_2,&#x5C;ldots,x_n$</span>, 有似然函数<br>
+<div class="mathjax-exps">$$L(&#x5C;theta)=&#x5C;prod_{i=1}^n&#x5C;sqrt{&#x5C;theta}x_i^{&#x5C;sqrt{&#x5C;theta}-1}     =&#x5C;theta^{&#x5C;frac{n}{2}}&#x5C;left(&#x5C;prod_{i=1}^nx_i&#x5C;right)^{&#x5C;sqrt{&#x5C;theta}-1}.$$</div><br>
+于是有<br>
+<div class="mathjax-exps">$$&#x5C;ln L(&#x5C;theta)=&#x5C;frac{n}{2}&#x5C;ln &#x5C;theta+(&#x5C;sqrt{&#x5C;theta}-1)&#x5C;sum_{i=1}^n&#x5C;ln x_i,$$</div><br>
+令<br>
+<div class="mathjax-exps">$$&#x5C;frac{&#x5C;text{d}}{&#x5C;text{d}&#x5C;theta}&#x5C;ln L(&#x5C;theta)=&#x5C;frac{n}{2&#x5C;theta}     +&#x5C;frac{1}{2&#x5C;sqrt{&#x5C;theta}}&#x5C;sum_{i=1}^n&#x5C;ln x_i=0,$$</div><br>
+得<br>
+<div class="mathjax-exps">$$&#x5C;theta=&#x5C;frac{n^2}{&#x5C;left(&#x5C;sum&#x5C;limits_{i=1}^n&#x5C;ln x_i&#x5C;right)^2}.$$</div><br>
+从而可知<span class="mathjax-exps">$&#x5C;theta$</span>的最大似然估计量为<br>
+<div class="mathjax-exps">$$&#x5C;hat{&#x5C;theta}=&#x5C;frac{n^2}{&#x5C;left(&#x5C;sum&#x5C;limits_{i=1}^n&#x5C;ln X_i&#x5C;right)^2}.$$</div><br>
+(3) 考虑一个样本值<span class="mathjax-exps">$x_1,x_2,&#x5C;ldots,x_n$</span>, 有似然函数<br>
+<div class="mathjax-exps">$$L(p)=&#x5C;prod_{i=1}^n {m&#x5C;choose x_i}p^{x_i}(1-p)^{m-x_i}     =p^{&#x5C;sum&#x5C;limits_{i=1}^n x_i}(1-p)^{nm-&#x5C;sum&#x5C;limits_{i=1}^n x_i}     &#x5C;prod_{i=1}^n {m&#x5C;choose x_i}.$$</div><br>
+于是有<br>
+<div class="mathjax-exps">$$&#x5C;ln L(p)=&#x5C;ln p&#x5C;sum_{i=1}^n x_i+&#x5C;left(nm-&#x5C;sum_{i=1}^n x_i&#x5C;right)&#x5C;ln(1-p)     +&#x5C;ln &#x5C;prod_{i=1}^n {m&#x5C;choose x_i},$$</div><br>
+令<br>
+<div class="mathjax-exps">$$&#x5C;frac{&#x5C;text{d}}{&#x5C;text{d}p}&#x5C;ln L(p)=&#x5C;frac1p&#x5C;sum_{i=1}^n x_i     +&#x5C;frac{1}{p-1}&#x5C;left(nm-&#x5C;sum_{i=1}^n x_i&#x5C;right)=0,$$</div><br>
+得<br>
+<div class="mathjax-exps">$$p=&#x5C;frac{&#x5C;sum&#x5C;limits_{i=1}^n x_i}{nm}=&#x5C;frac{&#x5C;overline{x}}{m},     &#x5C;qquad &#x5C;text{其中}&#x5C;overline{x}=&#x5C;frac{1}{n}&#x5C;sum&#x5C;limits_{i=1}^n x_i.$$</div><br>
+从而可知<span class="mathjax-exps">$p$</span>的最大似然估计量为<br>
+<div class="mathjax-exps">$$&#x5C;hat{p}=&#x5C;frac{&#x5C;overline{X}}{m}.$$</div></li>
 <li></li>
 <li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>因为<br>
+<div class="mathjax-exps">$$&#x5C;overline{x}=&#x5C;frac{1+2&#x5C;times6+3&#x5C;times7+4&#x5C;times23+5&#x5C;times26+6&#x5C;times21+7&#x5C;times12+8&#x5C;times3+9}{100}=4.99,$$</div><br>
+由前面的习题3(3)中的结论知<span class="mathjax-exps">$p$</span>的最大似然估计值为<br>
+<div class="mathjax-exps">$$&#x5C;hat{p}=&#x5C;frac{4.99}{10}=0.499.$$</div><div class="code-chunk" data-id="code-chunk-id-1" data-cmd="python" data-code=""><pre class="language-python "><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">6</span> <span class="token operator">+</span> <span class="token number">3</span> <span class="token operator">*</span> <span class="token number">7</span> <span class="token operator">+</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">23</span> <span class="token operator">+</span> <span class="token number">5</span> <span class="token operator">*</span> <span class="token number">26</span> <span class="token operator">+</span> <span class="token number">6</span> <span class="token operator">*</span> <span class="token number">21</span> <span class="token operator">+</span> <span class="token number">7</span> <span class="token operator">*</span> <span class="token number">12</span> <span class="token operator">+</span> <span class="token number">8</span> <span class="token operator">*</span> <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span>
+</pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"><pre class="language-text">4.99
+</pre></div></div>
+</li>
 </ol>
 <h2 class="mume-header" id="&#x57FA;&#x4E8E;&#x622A;&#x5C3E;&#x6837;&#x672C;&#x7684;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;">基于截尾样本的最大似然估计</h2>
 

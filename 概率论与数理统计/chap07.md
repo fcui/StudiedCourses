@@ -26,10 +26,124 @@ $$
     print(x.std(ddof=1)**2)
     ```
 2.
+    (1) 由题意计算可得
+    $$
+        \mu_1=\int_{-\infty}^{+\infty}x\theta c^\theta x^{-(\theta+1)}\text{d}x
+        =\theta c^\theta \int_{c}^{+\infty}x^{-\theta}\text{d}x
+        =\theta c^\theta \cdot\frac{x^{-\theta+1}}{-\theta+1}\Bigg|^{+\infty}_c
+        =\frac{c\theta}{\theta-1},
+    $$
+    从而有
+    $$
+        \theta=\frac{\mu_1}{\mu_1-c}.
+    $$
+    在上式中以$\overline{X}$来代替$\mu_1$, 可得$\theta$的矩估计量与矩估计值
+    $$
+        \hat{\theta}=\frac{\overline{X}}{\overline{X}-c},\qquad
+        \hat{\theta}=\frac{\overline{x}}{\overline{x}-c}.
+    $$
+    (2) 由题意计算可知
+    $$
+        \mu_1=\int_{-\infty}^{+\infty}x\sqrt{\theta}x^{\sqrt{\theta}-1}\text{d}x
+        =\sqrt{\theta}\int_0^1x^{\sqrt{\theta}}\text{d}x
+        =\frac{\sqrt{\theta}}{\sqrt{\theta}+1},
+    $$
+    于是解得
+    $$
+        \theta=\left(\frac{\mu_1}{\mu_1-1}\right)^2.
+    $$
+    在上式中以$\overline{X}$来代替$\mu_1$, 可得$\theta$的矩估计量与矩估计值
+    $$
+        \hat{\theta}=\left(\frac{\overline{X}}{\overline{X}-1}\right)^2,\qquad
+        \hat{\theta}=\left(\frac{\overline{x}}{\overline{x}-1}\right)^2.
+    $$
+    (3) 因为$\mu_1=E(X)=mp$, 可得$p=\dfrac{\mu_1}{m}$, 以$\overline{X}$代替$\mu_1$可得
+    $$
+        \hat{p}=\frac{\overline{X}}{m},\qquad \hat{p}=\frac{\overline{x}}{m}.
+    $$
 3.
+    (1) 考虑$x_1,x_2,\ldots,x_n$为一样本值, 则似然函数为
+    $$
+        L(\theta)=\prod_{i=1}^n\theta c^\theta x_i^{-(\theta+1)}
+        =\theta^nc^{n\theta}\left(\prod_{i=1}^nx_i\right)^{-(\theta+1)},
+    $$
+    于是有
+    $$
+        \ln L(\theta)=n\ln \theta +n\theta\ln c-(\theta+1)\sum_{i=1}^n\ln x_i.
+    $$
+    令
+    $$
+        \frac{\text{d}}{\text{d}\theta}\ln L(\theta)=\frac{n}{\theta}+n\ln c
+        -\sum_{i=1}^n\ln x_i=0,
+    $$
+    得
+    $$
+        \theta=\frac{n}{\sum\limits_{i=1}^n\ln x_i-n\ln c}.
+    $$
+    从而可知$\theta$的最大似然估计量为
+    $$
+        \hat{\theta}=\frac{n}{\sum\limits_{i=1}^n\ln X_i-n\ln c}.
+    $$
+    (2) 考虑一个样本值$x_1,x_2,\ldots,x_n$, 有似然函数
+    $$
+        L(\theta)=\prod_{i=1}^n\sqrt{\theta}x_i^{\sqrt{\theta}-1}
+        =\theta^{\frac{n}{2}}\left(\prod_{i=1}^nx_i\right)^{\sqrt{\theta}-1}.
+    $$
+    于是有
+    $$
+        \ln L(\theta)=\frac{n}{2}\ln \theta+(\sqrt{\theta}-1)\sum_{i=1}^n\ln x_i,
+    $$
+    令
+    $$
+        \frac{\text{d}}{\text{d}\theta}\ln L(\theta)=\frac{n}{2\theta}
+        +\frac{1}{2\sqrt{\theta}}\sum_{i=1}^n\ln x_i=0,
+    $$
+    得
+    $$
+        \theta=\frac{n^2}{\left(\sum\limits_{i=1}^n\ln x_i\right)^2}.
+    $$
+    从而可知$\theta$的最大似然估计量为
+    $$
+        \hat{\theta}=\frac{n^2}{\left(\sum\limits_{i=1}^n\ln X_i\right)^2}.
+    $$
+    (3) 考虑一个样本值$x_1,x_2,\ldots,x_n$, 有似然函数
+    $$
+        L(p)=\prod_{i=1}^n {m\choose x_i}p^{x_i}(1-p)^{m-x_i}
+        =p^{\sum\limits_{i=1}^n x_i}(1-p)^{nm-\sum\limits_{i=1}^n x_i}
+        \prod_{i=1}^n {m\choose x_i}.
+    $$
+    于是有
+    $$
+        \ln L(p)=\ln p\sum_{i=1}^n x_i+\left(nm-\sum_{i=1}^n x_i\right)\ln(1-p)
+        +\ln \prod_{i=1}^n {m\choose x_i},
+    $$
+    令
+    $$
+        \frac{\text{d}}{\text{d}p}\ln L(p)=\frac1p\sum_{i=1}^n x_i
+        +\frac{1}{p-1}\left(nm-\sum_{i=1}^n x_i\right)=0,
+    $$
+    得
+    $$
+        p=\frac{\sum\limits_{i=1}^n x_i}{nm}=\frac{\overline{x}}{m},
+        \qquad \text{其中}\overline{x}=\frac{1}{n}\sum\limits_{i=1}^n x_i.
+    $$
+    从而可知$p$的最大似然估计量为
+    $$
+        \hat{p}=\frac{\overline{X}}{m}.
+    $$
 4.
 5.
-6.
+6. 因为
+$$
+    \overline{x}=\frac{1+2\times6+3\times7+4\times23+5\times26+6\times21+7\times12+8\times3+9}{100}=4.99,
+$$
+由前面的习题3(3)中的结论知$p$的最大似然估计值为
+$$
+    \hat{p}=\frac{4.99}{10}=0.499.
+$$
+    ```python {cmd:true}
+    print((1 + 2 * 6 + 3 * 7 + 4 * 23 + 5 * 26 + 6 * 21 + 7 * 12 + 8 * 3 + 9) / 100)
+    ```
 ## 基于截尾样本的最大似然估计
 ## 估计量的评选标准
 ## 区间估计
