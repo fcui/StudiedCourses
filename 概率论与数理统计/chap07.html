@@ -299,13 +299,41 @@ x <span class="token operator">=</span> np<span class="token punctuation">.</spa
 </pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"><pre class="language-text">4.99
 </pre></div></div>
 </li>
+<li></li>
+<li></li>
 </ol>
 <h2 class="mume-header" id="&#x57FA;&#x4E8E;&#x622A;&#x5C3E;&#x6837;&#x672C;&#x7684;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;">基于截尾样本的最大似然估计</h2>
 
 <h2 class="mume-header" id="&#x4F30;&#x8BA1;&#x91CF;&#x7684;&#x8BC4;&#x9009;&#x6807;&#x51C6;">估计量的评选标准</h2>
 
+<ol start="9">
+<li></li>
+<li></li>
+<li>(1) 考虑一个样本值<span class="mathjax-exps">$x_1,x_2,&#x5C;ldots,x_n$</span>, 由题意可得似然函数<br>
+<div class="mathjax-exps">$$L(&#x5C;theta)=&#x5C;prod_{i=1}^n &#x5C;frac1&#x5C;theta x_i^{(1-&#x5C;theta)&#x2F;&#x5C;theta}    =&#x5C;frac{1}{&#x5C;theta^n}&#x5C;left(&#x5C;prod_{i=1}^nx_i&#x5C;right)^{(1-&#x5C;theta)&#x2F;&#x5C;theta},$$</div><br>
+于是有<br>
+<div class="mathjax-exps">$$&#x5C;ln L(&#x5C;theta)=&#x5C;frac{1-&#x5C;theta}{&#x5C;theta}&#x5C;sum_{i=1}^n&#x5C;ln x_i-n&#x5C;ln&#x5C;theta.$$</div><br>
+令<br>
+<div class="mathjax-exps">$$&#x5C;frac{&#x5C;text{d}}{&#x5C;text{d}&#x5C;theta}&#x5C;ln L(&#x5C;theta)=-&#x5C;frac{1}{&#x5C;theta^2}&#x5C;sum_{i=1}^n&#x5C;ln x_i-&#x5C;frac n&#x5C;theta=0,$$</div><br>
+得<br>
+<div class="mathjax-exps">$$&#x5C;theta=-&#x5C;frac1n&#x5C;sum_{i=1}^n&#x5C;ln x_i,$$</div><br>
+从而得到<span class="mathjax-exps">$&#x5C;theta$</span>最大似然估计量是<br>
+<div class="mathjax-exps">$$&#x5C;hat{&#x5C;theta}=-&#x5C;frac1n&#x5C;sum_{i=1}^n&#x5C;ln X_i.$$</div><br>
+(2) 由于<br>
+<div class="mathjax-exps">$$E(&#x5C;hat{&#x5C;theta})=-&#x5C;frac{1}{n}&#x5C;sum_{i=1}^nE(&#x5C;ln X_i),$$</div><br>
+而<br>
+<div class="mathjax-exps">$$E(&#x5C;ln X)=&#x5C;int_0^1&#x5C;ln x&#x5C;cdot &#x5C;frac1&#x5C;theta x^{(1-&#x5C;theta)&#x2F;&#x5C;theta}&#x5C;text{d}x    =-&#x5C;theta,$$</div><br>
+所以有<span class="mathjax-exps">$E(&#x5C;hat{&#x5C;theta})=&#x5C;theta$</span>, 即<span class="mathjax-exps">$&#x5C;hat{&#x5C;theta}$</span>是<span class="mathjax-exps">$&#x5C;theta$</span>的无偏估计量.</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
 <h2 class="mume-header" id="&#x533A;&#x95F4;&#x4F30;&#x8BA1;">区间估计</h2>
 
+<ol start="16">
+<li></li>
+</ol>
 <h2 class="mume-header" id="&#x6B63;&#x6001;&#x603B;&#x4F53;&#x5747;&#x503C;&#x4E0E;&#x65B9;&#x5DEE;&#x7684;&#x533A;&#x95F4;&#x4F30;&#x8BA1;">正态总体均值与方差的区间估计</h2>
 
 <h2 class="mume-header" id="0-1&#x5206;&#x5E03;&#x53C2;&#x6570;&#x7684;&#x533A;&#x95F4;&#x4F30;&#x8BA1;">(0-1)分布参数的区间估计</h2>

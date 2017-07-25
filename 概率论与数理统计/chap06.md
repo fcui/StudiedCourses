@@ -16,7 +16,7 @@ $$\begin{aligned}
         <\frac{\overline{X}-52}{6.3/6}<\frac{53.8-52}{6.3/6}\right\}\\
     &=\varPhi(1.714)-\varPhi(-1.143)=0.8302.
 \end{aligned}$$
-    ```python {cmd:true}
+    ```python {cmd:true, modify_source:true}
     print((53.8 - 52) / (6.3 / 6))
     print((50.8 - 52) / (6.3 / 6))
     from scipy.stats import norm
@@ -48,7 +48,7 @@ $$\begin{aligned}
 9.
 10.
     (1) 频率直方图如下:
-    ```python {cmd: true, matplotlib: true}
+    ```python {cmd: true, matplotlib: true, modify_source:true}
     import numpy as np
     import matplotlib.pyplot as plt
     import seaborn as sns
@@ -60,7 +60,7 @@ $$\begin{aligned}
     plt.show()
     ```
     (2) 箱线图如下:
-    ```python {cmd: true, matplotlib: true}
+    ```python {cmd: true, matplotlib: true, modify_source:true}
     import numpy as np
     import matplotlib.pyplot as plt
     import seaborn as sns
@@ -72,7 +72,7 @@ $$\begin{aligned}
     plt.show()
     ```
 11. 上题中30个数据的$\alpha=0.2$的截尾均值为$226.33$.
-    ```python {cmd:true}
+    ```python {cmd:true, modify_source:true}
     import numpy as np
     import math
     x = np.array([225, 232, 232, 245, 235, 245, 270, 225, 240, 240,

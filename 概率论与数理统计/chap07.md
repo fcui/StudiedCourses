@@ -18,7 +18,7 @@ $$
     s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2,
 $$
 故有$s^2=6.8571\times 10^{-6}$.
-    ```python {cmd:true}
+    ```python {cmd:true, modify_source:true}
     import numpy as np
     x = np.array([74.001, 74.005, 74.003, 74.001, 74.000, 73.998, 74.006, 74.002])
     print(x.mean())
@@ -141,12 +141,53 @@ $$
 $$
     \hat{p}=\frac{4.99}{10}=0.499.
 $$
-    ```python {cmd:true}
+    ```python {cmd:true, modify_source:true}
     print((1 + 2 * 6 + 3 * 7 + 4 * 23 + 5 * 26 + 6 * 21 + 7 * 12 + 8 * 3 + 9) / 100)
     ```
+7.
+8.
 ## 基于截尾样本的最大似然估计
 ## 估计量的评选标准
+9.
+10.
+11.
+    (1) 考虑一个样本值$x_1,x_2,\ldots,x_n$, 由题意可得似然函数
+    $$
+        L(\theta)=\prod_{i=1}^n \frac1\theta x_i^{(1-\theta)/\theta}
+        =\frac{1}{\theta^n}\left(\prod_{i=1}^nx_i\right)^{(1-\theta)/\theta},
+    $$
+    于是有
+    $$
+        \ln L(\theta)=\frac{1-\theta}{\theta}\sum_{i=1}^n\ln x_i-n\ln\theta.
+    $$
+    令
+    $$
+        \frac{\text{d}}{\text{d}\theta}\ln L(\theta)=-\frac{1}{\theta^2}\sum_{i=1}^n\ln x_i-\frac n\theta=0,
+    $$
+    得
+    $$
+        \theta=-\frac1n\sum_{i=1}^n\ln x_i,
+    $$
+    从而得到$\theta$最大似然估计量是
+    $$
+        \hat{\theta}=-\frac1n\sum_{i=1}^n\ln X_i.
+    $$
+    (2) 由于
+    $$
+        E(\hat{\theta})=-\frac{1}{n}\sum_{i=1}^nE(\ln X_i),
+    $$
+    而
+    $$
+        E(\ln X)=\int_0^1\ln x\cdot \frac1\theta x^{(1-\theta)/\theta}\text{d}x
+        =-\theta,
+    $$
+    所以有$E(\hat{\theta})=\theta$, 即$\hat{\theta}$是$\theta$的无偏估计量.
+12.
+13.
+14.
+15.
 ## 区间估计
+16.
 ## 正态总体均值与方差的区间估计
 ## (0-1)分布参数的区间估计
 ## 单侧置信区间
