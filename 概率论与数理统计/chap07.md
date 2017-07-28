@@ -188,6 +188,64 @@ $$
 15.
 ## 区间估计
 16.
+    (1) 首先取得样本均值$\overline{X}=6$, $\alpha=0.5$, 而
+    $$
+        \frac{\overline{X}-\mu}{\sigma/3}\sim N(0,1),
+    $$
+    那么按标准正态分布的上$\alpha$分位点的定义, 有
+    $$
+        P\left\{\left|\frac{\overline{X}-\mu}{\sigma/3}\right|<z_{0.025}\right\}
+        =0.95,
+    $$
+    得到$z_{0.025}=1.96$, 于是有$\mu$的置信水平为$0.95$的置信区间为
+    $$
+        \left(\overline{X}\pm0.2\times 1.96\right),\quad \text{即}
+        (5.608, 6.392).
+    $$
+
+    ```python {cmd:true}
+    import numpy as np
+    from scipy.stats import norm
+    x = np.array([6.0, 5.7, 5.8, 6.5, 7.0, 6.3, 5.6, 6.1, 5.0])
+    print(x.mean())
+    print(norm.ppf((1 + 0.95) / 2))
+    print(norm.ppf(1 - 0.025))
+    ```
+    (2) 首先得到样本标准差$S=0.5745$, $\alpha=0.5$, 而此时
+    $$
+        \frac{\overline{X}-\mu}{S/3}\sim t(8),
+    $$
+    那么我们有
+    $$
+        P\left\{\left|\frac{\overline{X}-\mu}{S/3}\right|<t_{0.025}(8)\right\}
+        =0.95,
+    $$
+    至于$t_{0.025}(8)=2.306$, 于是得到$\mu$的置信水平为$0.95$的置信区间为
+    $$
+        \left(\overline{X}\pm \frac{S}{3}t_{0.025}(8)\right)\qquad
+        \text{即} (5.558, 6.442).
+    $$
+    ```python {cmd:true}
+    import numpy as np
+    from scipy.stats import t
+    x = np.array([6.0, 5.7, 5.8, 6.5, 7.0, 6.3, 5.6, 6.1, 5.0])
+    print(x.std(ddof=1))
+    print(t.ppf(1 - 0.025, 8))
+    print(-t.ppf(0.025, 8))
+    print('interval: ({}, {})'.format(6 - 0.5745 * 2.306 / 3, 6 + 0.5745 * 2.306 / 3))
+    print(t.interval(0.95, df=8, loc=6, scale=x.std(ddof=1)/3))
+    ```
 ## 正态总体均值与方差的区间估计
+17.
+18.
+19.
+20.
+21.
+22.
+23.
 ## (0-1)分布参数的区间估计
+24.
 ## 单侧置信区间
+25.
+26.
+27.

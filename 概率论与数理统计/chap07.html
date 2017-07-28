@@ -332,14 +332,68 @@ x <span class="token operator">=</span> np<span class="token punctuation">.</spa
 <h2 class="mume-header" id="&#x533A;&#x95F4;&#x4F30;&#x8BA1;">区间估计</h2>
 
 <ol start="16">
-<li></li>
+<li>
+<p>(1) 首先取得样本均值<span class="mathjax-exps">$&#x5C;overline{X}=6$</span>, <span class="mathjax-exps">$&#x5C;alpha=0.5$</span>, 而<br>
+<div class="mathjax-exps">$$&#x5C;frac{&#x5C;overline{X}-&#x5C;mu}{&#x5C;sigma&#x2F;3}&#x5C;sim N(0,1),$$</div><br>
+那么按标准正态分布的上<span class="mathjax-exps">$&#x5C;alpha$</span>分位点的定义, 有<br>
+<div class="mathjax-exps">$$P&#x5C;left&#x5C;{&#x5C;left|&#x5C;frac{&#x5C;overline{X}-&#x5C;mu}{&#x5C;sigma&#x2F;3}&#x5C;right|&lt;z_{0.025}&#x5C;right&#x5C;}    =0.95,$$</div><br>
+得到<span class="mathjax-exps">$z_{0.025}=1.96$</span>, 于是有<span class="mathjax-exps">$&#x5C;mu$</span>的置信水平为<span class="mathjax-exps">$0.95$</span>的置信区间为<br>
+<div class="mathjax-exps">$$&#x5C;left(&#x5C;overline{X}&#x5C;pm0.2&#x5C;times 1.96&#x5C;right),&#x5C;quad &#x5C;text{即}    (5.608, 6.392).$$</div></p>
+<div class="code-chunk" data-id="code-chunk-id-2" data-cmd="python" data-code=""><pre class="language-python "><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> norm
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">6.0</span><span class="token punctuation">,</span> <span class="token number">5.7</span><span class="token punctuation">,</span> <span class="token number">5.8</span><span class="token punctuation">,</span> <span class="token number">6.5</span><span class="token punctuation">,</span> <span class="token number">7.0</span><span class="token punctuation">,</span> <span class="token number">6.3</span><span class="token punctuation">,</span> <span class="token number">5.6</span><span class="token punctuation">,</span> <span class="token number">6.1</span><span class="token punctuation">,</span> <span class="token number">5.0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>norm<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">0.95</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>norm<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> <span class="token number">0.025</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"><pre class="language-text">6.0
+1.95996398454
+1.95996398454
+</pre></div></div>
+<p>(2) 首先得到样本标准差<span class="mathjax-exps">$S=0.5745$</span>, <span class="mathjax-exps">$&#x5C;alpha=0.5$</span>, 而此时<br>
+<div class="mathjax-exps">$$&#x5C;frac{&#x5C;overline{X}-&#x5C;mu}{S&#x2F;3}&#x5C;sim t(8),$$</div><br>
+那么我们有<br>
+<div class="mathjax-exps">$$P&#x5C;left&#x5C;{&#x5C;left|&#x5C;frac{&#x5C;overline{X}-&#x5C;mu}{S&#x2F;3}&#x5C;right|&lt;t_{0.025}(8)&#x5C;right&#x5C;}    =0.95,$$</div><br>
+至于<span class="mathjax-exps">$t_{0.025}(8)=2.306$</span>, 于是得到<span class="mathjax-exps">$&#x5C;mu$</span>的置信水平为<span class="mathjax-exps">$0.95$</span>的置信区间为<br>
+<div class="mathjax-exps">$$&#x5C;left(&#x5C;overline{X}&#x5C;pm &#x5C;frac{S}{3}t_{0.025}(8)&#x5C;right)&#x5C;qquad    &#x5C;text{即} (5.558, 6.442).$$</div></p>
+<div class="code-chunk" data-id="code-chunk-id-3" data-cmd="python" data-code=""><pre class="language-python "><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> t
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">6.0</span><span class="token punctuation">,</span> <span class="token number">5.7</span><span class="token punctuation">,</span> <span class="token number">5.8</span><span class="token punctuation">,</span> <span class="token number">6.5</span><span class="token punctuation">,</span> <span class="token number">7.0</span><span class="token punctuation">,</span> <span class="token number">6.3</span><span class="token punctuation">,</span> <span class="token number">5.6</span><span class="token punctuation">,</span> <span class="token number">6.1</span><span class="token punctuation">,</span> <span class="token number">5.0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span>std<span class="token punctuation">(</span>ddof<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> <span class="token number">0.025</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token operator">-</span>t<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token number">0.025</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'interval: ({}, {})'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span><span class="token number">6</span> <span class="token operator">-</span> <span class="token number">0.5745</span> <span class="token operator">*</span> <span class="token number">2.306</span> <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span> <span class="token operator">+</span> <span class="token number">0.5745</span> <span class="token operator">*</span> <span class="token number">2.306</span> <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>interval<span class="token punctuation">(</span><span class="token number">0.95</span><span class="token punctuation">,</span> df<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">,</span> scale<span class="token operator">=</span>x<span class="token punctuation">.</span>std<span class="token punctuation">(</span>ddof<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"><pre class="language-text">0.574456264654
+2.30600413503
+2.30600413503
+interval: (5.558401, 6.441599)
+(5.558433826104169, 6.441566173895831)
+</pre></div></div>
+</li>
 </ol>
 <h2 class="mume-header" id="&#x6B63;&#x6001;&#x603B;&#x4F53;&#x5747;&#x503C;&#x4E0E;&#x65B9;&#x5DEE;&#x7684;&#x533A;&#x95F4;&#x4F30;&#x8BA1;">正态总体均值与方差的区间估计</h2>
 
+<ol start="17">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
 <h2 class="mume-header" id="0-1&#x5206;&#x5E03;&#x53C2;&#x6570;&#x7684;&#x533A;&#x95F4;&#x4F30;&#x8BA1;">(0-1)分布参数的区间估计</h2>
 
+<ol start="24">
+<li></li>
+</ol>
 <h2 class="mume-header" id="&#x5355;&#x4FA7;&#x7F6E;&#x4FE1;&#x533A;&#x95F4;">单侧置信区间</h2>
 
+<ol start="25">
+<li></li>
+<li></li>
+<li></li>
+</ol>
 
     </body>
     
