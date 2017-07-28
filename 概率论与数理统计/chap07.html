@@ -378,7 +378,41 @@ interval: (5.558401, 6.441599)
 <li></li>
 <li></li>
 <li></li>
-<li></li>
+<li>将A批导线的均值与方差分别记为<span class="mathjax-exps">$&#x5C;overline{X}$</span>和<span class="mathjax-exps">$S_1^2$</span>, 将B批导线的均值与方差分别记为<span class="mathjax-exps">$&#x5C;overline{Y}$</span>和<span class="mathjax-exps">$S_2^2$</span>, 则通过计算可得<br>
+<div class="mathjax-exps">$$n_1=4,&#x5C;quad &#x5C;overline{X}=0.14125, &#x5C;quad S_1^2 =8.25&#x5C;times 10^{-6},&#x5C;quad n_2=5,&#x5C;quad &#x5C;overline{Y}=0.1392,&#x5C;quad S_2^2=5.2&#x5C;times 10^{-6}.$$</div><br>
+于是<br>
+<div class="mathjax-exps">$$S_w^2=&#x5C;frac{3S_1^2+4S_2^2}{7}=0.00255^2.$$</div><br>
+从而由<br>
+<div class="mathjax-exps">$$&#x5C;frac{(&#x5C;overline{X}-&#x5C;overline{Y})-(&#x5C;mu_1-&#x5C;mu_2)}{S_w&#x5C;sqrt{&#x5C;frac14+&#x5C;frac15}}&#x5C;sim t(7),$$</div><br>
+可知<span class="mathjax-exps">$&#x5C;mu_1-&#x5C;mu_2$</span>的一个置信水平为<span class="mathjax-exps">$0.95$</span>的置信区间为<br>
+<div class="mathjax-exps">$$&#x5C;left(&#x5C;overline{X}-&#x5C;overline{Y}&#x5C;pm t_{0.025}(7)&#x5C;cdot S_w&#x5C;cdot &#x5C;sqrt{&#x5C;frac14+&#x5C;frac15}&#x5C;right)=(-0.001996, 0.006096).$$</div><div class="code-chunk" data-id="code-chunk-id-4" data-cmd="python" data-code=""><pre class="language-python "><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> t
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.143</span><span class="token punctuation">,</span> <span class="token number">0.142</span><span class="token punctuation">,</span> <span class="token number">0.143</span><span class="token punctuation">,</span> <span class="token number">0.137</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x_bar <span class="token operator">=</span> x<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+s1 <span class="token operator">=</span> x<span class="token punctuation">.</span>std<span class="token punctuation">(</span>ddof<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x_bar<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s1<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
+y <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.140</span><span class="token punctuation">,</span> <span class="token number">0.142</span><span class="token punctuation">,</span> <span class="token number">0.136</span><span class="token punctuation">,</span> <span class="token number">0.138</span><span class="token punctuation">,</span> <span class="token number">0.140</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+y_bar <span class="token operator">=</span> y<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+s2 <span class="token operator">=</span> y<span class="token punctuation">.</span>std<span class="token punctuation">(</span>ddof<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>y_bar<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s2<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
+sw <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> s1 <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">4</span> <span class="token operator">*</span> s2 <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">0.5</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sw<span class="token punctuation">)</span>
+tn <span class="token operator">=</span> <span class="token operator">-</span>t<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token number">0.025</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+a <span class="token operator">=</span> x_bar <span class="token operator">-</span> y_bar <span class="token operator">-</span> tn <span class="token operator">*</span> sw <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0.25</span> <span class="token operator">+</span> <span class="token number">0.2</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">0.5</span>
+b <span class="token operator">=</span> x_bar <span class="token operator">-</span> y_bar <span class="token operator">+</span> tn <span class="token operator">*</span> sw <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0.25</span> <span class="token operator">+</span> <span class="token number">0.2</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">0.5</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"interval: ({}, {})"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>interval<span class="token punctuation">(</span><span class="token number">0.95</span><span class="token punctuation">,</span> df<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">,</span> loc<span class="token operator">=</span>x_bar<span class="token operator">-</span>y_bar<span class="token punctuation">,</span> scale<span class="token operator">=</span>sw <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0.25</span> <span class="token operator">+</span> <span class="token number">0.2</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"><pre class="language-text">0.14125
+8.25e-06
+0.1392
+5.2e-06
+0.0025509102017
+interval: (-0.0019963511300559126, 0.00609635113005585)
+(-0.0019963511300559109, 0.0060963511300558479)
+</pre></div></div>
+</li>
 <li></li>
 <li></li>
 </ol>
@@ -391,7 +425,25 @@ interval: (5.558401, 6.441599)
 
 <ol start="25">
 <li></li>
-<li></li>
+<li>由于<span class="mathjax-exps">$1-&#x5C;alpha=0.95$</span>, <span class="mathjax-exps">$n=16$</span>, <span class="mathjax-exps">$t_{0.5}(15)=1.7531$</span>, <span class="mathjax-exps">$&#x5C;overline{x}=41116.875$</span>,<br>
+<span class="mathjax-exps">$S=1346.843$</span>, 那么就可得到<span class="mathjax-exps">$&#x5C;mu$</span>的置信水平为<span class="mathjax-exps">$0.95$</span>的单侧置信下限为<br>
+<div class="mathjax-exps">$$&#x5C;underline{&#x5C;mu}=&#x5C;overline{x}-&#x5C;frac{S}{&#x5C;sqrt{n}}t_&#x5C;alpha(n-1)=40527.$$</div><div class="code-chunk" data-id="code-chunk-id-5" data-cmd="python" data-code=""><pre class="language-python "><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> t
+tn <span class="token operator">=</span> <span class="token operator">-</span>t<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>tn<span class="token punctuation">)</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">41250</span><span class="token punctuation">,</span> <span class="token number">40187</span><span class="token punctuation">,</span> <span class="token number">43175</span><span class="token punctuation">,</span> <span class="token number">41010</span><span class="token punctuation">,</span> <span class="token number">39265</span><span class="token punctuation">,</span> <span class="token number">41872</span><span class="token punctuation">,</span> <span class="token number">42654</span><span class="token punctuation">,</span> <span class="token number">41287</span><span class="token punctuation">,</span>
+            <span class="token number">38970</span><span class="token punctuation">,</span> <span class="token number">40200</span><span class="token punctuation">,</span> <span class="token number">42550</span><span class="token punctuation">,</span> <span class="token number">41095</span><span class="token punctuation">,</span> <span class="token number">40680</span><span class="token punctuation">,</span> <span class="token number">43500</span><span class="token punctuation">,</span> <span class="token number">39775</span><span class="token punctuation">,</span> <span class="token number">40400</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x_bar <span class="token operator">=</span> x<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x_bar<span class="token punctuation">)</span>
+s <span class="token operator">=</span> x<span class="token punctuation">.</span>std<span class="token punctuation">(</span>ddof<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x_bar <span class="token operator">-</span> s <span class="token operator">/</span> <span class="token number">4</span> <span class="token operator">*</span> tn<span class="token punctuation">)</span>
+</pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"><pre class="language-text">1.75305035569
+41116.875
+1346.84277108
+40526.6042003
+</pre></div></div>
+</li>
 <li></li>
 </ol>
 

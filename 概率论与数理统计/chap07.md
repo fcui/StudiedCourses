@@ -240,12 +240,67 @@ $$
 18.
 19.
 20.
-21.
+21. 将A批导线的均值与方差分别记为$\overline{X}$和$S_1^2$, 将B批导线的均值与方差分别记为$\overline{Y}$和$S_2^2$, 则通过计算可得
+$$
+    n_1=4,\quad \overline{X}=0.14125, \quad S_1^2 =8.25\times 10^{-6},\quad n_2=5,\quad \overline{Y}=0.1392,\quad S_2^2=5.2\times 10^{-6}.
+$$
+于是
+$$
+    S_w^2=\frac{3S_1^2+4S_2^2}{7}=0.00255^2.
+$$
+从而由
+$$
+    \frac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{S_w\sqrt{\frac14+\frac15}}
+    \sim t(7),
+$$
+可知$\mu_1-\mu_2$的一个置信水平为$0.95$的置信区间为
+$$
+    \left(\overline{X}-\overline{Y}\pm t_{0.025}(7)\cdot S_w\cdot \sqrt{\frac14+\frac15}\right)=(-0.001996, 0.006096).
+$$
+    ```python {cmd:true}
+    import numpy as np
+    from scipy.stats import t
+    x = np.array([0.143, 0.142, 0.143, 0.137])
+    x_bar = x.mean()
+    s1 = x.std(ddof=1)
+    print(x_bar)
+    print(s1**2)
+    y = np.array([0.140, 0.142, 0.136, 0.138, 0.140])
+    y_bar = y.mean()
+    s2 = y.std(ddof=1)
+    print(y_bar)
+    print(s2**2)
+    sw = ((3 * s1 ** 2 + 4 * s2 ** 2) / 7) ** 0.5
+    print(sw)
+    tn = -t.ppf(0.025, 7)
+    a = x_bar - y_bar - tn * sw * (0.25 + 0.2) ** 0.5
+    b = x_bar - y_bar + tn * sw * (0.25 + 0.2) ** 0.5
+    print("interval: ({}, {})".format(a, b))
+    print(t.interval(0.95, df=7, loc=x_bar-y_bar, scale=sw * (0.25 + 0.2) ** 0.5))
+    ```
 22.
 23.
 ## (0-1)分布参数的区间估计
 24.
 ## 单侧置信区间
 25.
-26.
+26. 由于$1-\alpha=0.95$, $n=16$, $t_{0.5}(15)=1.7531$, $\overline{x}=41116.875$,
+$S=1346.843$, 那么就可得到$\mu$的置信水平为$0.95$的单侧置信下限为
+$$
+    \underline{\mu}=\overline{x}-\frac{S}{\sqrt{n}}t_\alpha(n-1)
+    =40527.
+$$
+    ```python {cmd:true}
+    import numpy as np
+    from scipy.stats import t
+    tn = -t.ppf(0.05, 15)
+    print(tn)
+    x = np.array([41250, 40187, 43175, 41010, 39265, 41872, 42654, 41287,
+                38970, 40200, 42550, 41095, 40680, 43500, 39775, 40400])
+    x_bar = x.mean()
+    print(x_bar)
+    s = x.std(ddof=1)
+    print(s)
+    print(x_bar - s / 4 * tn)
+    ```
 27.
