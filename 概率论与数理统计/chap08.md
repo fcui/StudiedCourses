@@ -26,6 +26,7 @@ $$
     import numpy as np
     from scipy.stats import norm
     from scipy.stats import t
+    from scipy.stats import chi2
     ```
     ```python {cmd=true, continue=true}
     print(-t.ppf(0.005, 4))
@@ -85,7 +86,26 @@ $$
 9.
 10.
 ## 正态总体方差的假设检验
-11.
+11. 考虑在显著性水平为$\alpha$的情况下左边检验问题
+$$
+    H_0:\sigma^2\geqslant \sigma_0^2,\qquad H_1:\sigma^2<\sigma_0^2,
+$$
+故拒绝域是
+$$
+    \chi^2=\frac{(n-1)s^2}{\sigma_0^2}\leqslant\chi_{1-\alpha}^2(n-1)=2.0879,
+$$
+而此题中$n=10$, $\sigma_0=14$, $\alpha=0.01$, $s^2=24.2333$,
+$$
+    \frac{(n-1)s^2}{\sigma_0^2}=1.1128<2.0879,
+$$
+故拒绝$H_0$, 也即认为提纯后的群体比原群体整齐.
+```python {cmd=true, continue="package"}
+print(chi2.ppf(0.01, 9)) # 主要与书上所考虑的alpha是相反的
+x = np.array([90, 105, 101, 95, 100, 100, 101, 105, 93, 97])
+s = x.std(ddof=1)
+print(s**2)
+print(9 * s ** 2 / 14 ** 2)
+```
 ## 置信区间与假设检验之间的关系
 ## 样本容量的选取
 ## 分布拟合检验

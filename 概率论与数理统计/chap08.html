@@ -243,6 +243,7 @@ html body .reveal {
 从而可知在显著性水平<span class="mathjax-exps">$&#x5C;alpha=0.01$</span>下, 可接受原假设<span class="mathjax-exps">$H_0$</span>.<div class="code-chunk" data-id="package" data-cmd="python" data-code=""><pre class="language-python "><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> norm
 <span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> t
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> chi2
 </pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"></div></div>
 <div class="code-chunk" data-id="code-chunk-id-1" data-cmd="python" data-code=""><pre class="language-python "><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token operator">-</span>t<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token number">0.005</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3.25</span><span class="token punctuation">,</span> <span class="token number">3.27</span><span class="token punctuation">,</span> <span class="token number">3.24</span><span class="token punctuation">,</span> <span class="token number">3.26</span><span class="token punctuation">,</span> <span class="token number">3.24</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
@@ -300,8 +301,23 @@ sw <span class="token operator">=</span> sw2 <span class="token operator">**</sp
 <h2 class="mume-header" id="&#x6B63;&#x6001;&#x603B;&#x4F53;&#x65B9;&#x5DEE;&#x7684;&#x5047;&#x8BBE;&#x68C0;&#x9A8C;">正态总体方差的假设检验</h2>
 
 <ol start="11">
-<li></li>
+<li>考虑在显著性水平为<span class="mathjax-exps">$&#x5C;alpha$</span>的情况下左边检验问题<br>
+<div class="mathjax-exps">$$H_0:&#x5C;sigma^2&#x5C;geqslant &#x5C;sigma_0^2,&#x5C;qquad H_1:&#x5C;sigma^2&lt;&#x5C;sigma_0^2,$$</div><br>
+故拒绝域是<br>
+<div class="mathjax-exps">$$&#x5C;chi^2=&#x5C;frac{(n-1)s^2}{&#x5C;sigma_0^2}&#x5C;leqslant&#x5C;chi_{1-&#x5C;alpha}^2(n-1)=2.0879,$$</div><br>
+而此题中<span class="mathjax-exps">$n=10$</span>, <span class="mathjax-exps">$&#x5C;sigma_0=14$</span>, <span class="mathjax-exps">$&#x5C;alpha=0.01$</span>, <span class="mathjax-exps">$s^2=24.2333$</span>,<br>
+<div class="mathjax-exps">$$&#x5C;frac{(n-1)s^2}{&#x5C;sigma_0^2}=1.1128&lt;2.0879,$$</div><br>
+故拒绝<span class="mathjax-exps">$H_0$</span>, 也即认为提纯后的群体比原群体整齐.</li>
 </ol>
+<div class="code-chunk" data-id="code-chunk-id-3" data-cmd="python" data-code=""><pre class="language-python "><span class="token keyword">print</span><span class="token punctuation">(</span>chi2<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 主要与书上所考虑的alpha是相反的</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">105</span><span class="token punctuation">,</span> <span class="token number">101</span><span class="token punctuation">,</span> <span class="token number">95</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">101</span><span class="token punctuation">,</span> <span class="token number">105</span><span class="token punctuation">,</span> <span class="token number">93</span><span class="token punctuation">,</span> <span class="token number">97</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+s <span class="token operator">=</span> x<span class="token punctuation">.</span>std<span class="token punctuation">(</span>ddof<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">9</span> <span class="token operator">*</span> s <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">/</span> <span class="token number">14</span> <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">)</span>
+</pre><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"><pre class="language-text">2.08790073587
+24.2333333333
+1.11275510204
+</pre></div></div>
 <h2 class="mume-header" id="&#x7F6E;&#x4FE1;&#x533A;&#x95F4;&#x4E0E;&#x5047;&#x8BBE;&#x68C0;&#x9A8C;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;">置信区间与假设检验之间的关系</h2>
 
 <h2 class="mume-header" id="&#x6837;&#x672C;&#x5BB9;&#x91CF;&#x7684;&#x9009;&#x53D6;">样本容量的选取</h2>
