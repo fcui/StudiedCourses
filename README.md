@@ -1,7 +1,7 @@
 ## Deep Learning (Andrew Ng)
 ### Neural Networks and Deep Learning
 #### Week1 Introduction to deep learning
-[Quiz](1. Neural Networks and Deep Learning/week1/Quiz.html) 
+[Quiz](deep-learning-AndrewNg/coures1/week1/Quiz.html)
 
 ## 概率论与数理统计(第四版)习题解答
 ### [第三章 多维随机变量及其分布](概率论与数理统计/chap03.html)
