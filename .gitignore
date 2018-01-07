@@ -27,3 +27,4 @@
 统计学习导论/ISLR-python-master.zip
 统计学习导论/chap03-线性回归/.ipynb_checkpoints/Chapter 3-checkpoint.ipynb
 *.asv
+*.log
